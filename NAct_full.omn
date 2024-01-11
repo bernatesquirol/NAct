@@ -1,0 +1,6052 @@
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: : <http://purl.org/nact>
+
+
+
+Ontology: <http://purl.org/nact>
+<http://purl.org/nact/v1>
+
+Annotations: 
+    <http://purl.org/dc/elements/1.1/creator> "Dorothea Tsatsou",
+    <http://purl.org/dc/elements/1.1/description> "The Nutrition and Activity Ontology (NAct) is designed to drive personalised nutritional and physical activity recommendations and effectively support healthy living, through a reasoning-based AI decision support system. NAct coalesces nutritional, medical, behavioural and lifestyle indicators with dietary and physical activity directives."@en,
+    <http://purl.org/dc/elements/1.1/language> "Εnglish",
+    <http://purl.org/dc/elements/1.1/publisher> "The Centre for Research and Technology Hellas (CERTH) - Information Technologies Institute (ITI)",
+    <http://purl.org/dc/elements/1.1/rights> "Creative Commons Attribution Share Alike 4.0 International
+https://creativecommons.org/licenses/by-sa/4.0/legalcode",
+    <http://purl.org/dc/elements/1.1/title> "NAct: The Νutrition & Activity Ontology"@en,
+    rdfs:comment "### Current version:
+The NAct (Nutrition & Activity) ontology is originally developed in the premises of the H2020 IA project PROTEIN (https://protein-h2020.eu/).
+
+#### Main health and nutrition expertise contribution:
+Elena Lalama (Charité)
+
+#### Health, nutrition and dietetics guidelines: 
+Saskia L. Wilson-Barnes (University of Surrey),
+Kathryn Hart (University of Surrey), 
+Véronique Cornelissen (KU Leuven), 
+Roselien Buys (KU Leuven),
+Ioannis Pagkalos (International Hellenic University),
+Sofia Balula Dias (Universidade de Lisboa)
+
+#### Scientific supevision:
+Kosmas Dimitropoulos (CERTH-ITI)
+Petros Daras (CERTH-ITI)"@en,
+    owl:versionInfo "v1.9.5"
+
+AnnotationProperty: <http://purl.org/dc/elements/1.1/contributor>
+
+    
+AnnotationProperty: <http://purl.org/dc/elements/1.1/coverage>
+
+    
+AnnotationProperty: <http://purl.org/dc/elements/1.1/creator>
+
+    
+AnnotationProperty: <http://purl.org/dc/elements/1.1/date>
+
+    
+AnnotationProperty: <http://purl.org/dc/elements/1.1/description>
+
+    
+AnnotationProperty: <http://purl.org/dc/elements/1.1/format>
+
+    
+AnnotationProperty: <http://purl.org/dc/elements/1.1/identifier>
+
+    
+AnnotationProperty: <http://purl.org/dc/elements/1.1/language>
+
+    
+AnnotationProperty: <http://purl.org/dc/elements/1.1/publisher>
+
+    
+AnnotationProperty: <http://purl.org/dc/elements/1.1/relation>
+
+    
+AnnotationProperty: <http://purl.org/dc/elements/1.1/rights>
+
+    
+AnnotationProperty: <http://purl.org/dc/elements/1.1/source>
+
+    
+AnnotationProperty: <http://purl.org/dc/elements/1.1/subject>
+
+    
+AnnotationProperty: <http://purl.org/dc/elements/1.1/title>
+
+    
+AnnotationProperty: <http://purl.org/dc/elements/1.1/type>
+
+    
+AnnotationProperty: <http://www.w3.org/2004/02/skos/core#altLabel>
+
+    
+AnnotationProperty: <http://www.w3.org/2004/02/skos/core#changeNote>
+
+    
+AnnotationProperty: <http://www.w3.org/2004/02/skos/core#example>
+
+    
+AnnotationProperty: <http://www.w3.org/2004/02/skos/core#historyNote>
+
+    
+AnnotationProperty: owl:sameAs
+
+    
+AnnotationProperty: owl:versionInfo
+
+    
+AnnotationProperty: rdfs:comment
+
+    
+Datatype: rdf:PlainLiteral
+
+    
+ObjectProperty: <http://purl.org/nact#allowedActivity>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#historyNote> "Was:
+excludeActivity"@en
+    
+    Domain: 
+        <http://purl.org/nact#Person>
+    
+    Range: 
+        <http://purl.org/nact#Activity>
+    
+    
+ObjectProperty: <http://purl.org/nact#allowedFood>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#historyNote> "Was:
+excludeFood"@en
+    
+    Domain: 
+        <http://purl.org/nact#Person>
+    
+    Range: 
+        <http://purl.org/nact#Food>
+    
+    
+ObjectProperty: <http://purl.org/nact#allowedNutrient>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#historyNote> "Was:
+restrictNutrient"@en
+    
+    Domain: 
+        <http://purl.org/nact#Person>
+    
+    Range: 
+        <http://purl.org/nact#Nutrient>
+    
+    
+ObjectProperty: <http://purl.org/nact#containedInFood>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."@en
+    
+    Characteristics: 
+        Symmetric
+    
+    InverseOf: 
+        <http://purl.org/nact#containsFood>
+    
+    
+ObjectProperty: <http://purl.org/nact#containsFood>
+
+    Annotations: 
+        rdfs:comment "Used for complex food breakdown to constituent (simpler) foods."@en
+    
+    Characteristics: 
+        Symmetric
+    
+    InverseOf: 
+        <http://purl.org/nact#containedInFood>
+    
+    
+ObjectProperty: <http://purl.org/nact#containsNutrient>
+
+    Annotations: 
+        rdfs:comment "Currently used for somewhat substantial participation of nutrient to food."@en
+    
+    Domain: 
+        <http://purl.org/nact#Food>
+    
+    Range: 
+        <http://purl.org/nact#Nutrient>
+    
+    
+ObjectProperty: <http://purl.org/nact#followsDiet>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."@en
+    
+    Domain: 
+        <http://purl.org/nact#Person>
+    
+    Range: 
+        <http://purl.org/nact#Diet>
+    
+    
+ObjectProperty: <http://purl.org/nact#freeOf>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+Example usage in one axiom.
+No further axioms are expected to be included in this version."@en
+    
+    Domain: 
+        <http://purl.org/nact#Food>
+    
+    Range: 
+        <http://purl.org/nact#Nutrient>
+    
+    
+ObjectProperty: <http://purl.org/nact#fulfilGoal>
+
+    Annotations: 
+        rdfs:comment "Used for constructing the User KB.
+Please refer to main publication for usage example."@en
+    
+    
+ObjectProperty: <http://purl.org/nact#goalActivity>
+
+    Annotations: 
+        rdfs:comment "Exploratory relation. 
+Used to infer if a given activity may contribute to the requirements of a goal, condition, type of user, or other relevant class."@en
+    
+    Range: 
+        <http://purl.org/nact#Activity>
+    
+    
+ObjectProperty: <http://purl.org/nact#goalNutrient>
+
+    Annotations: 
+        rdfs:comment "Exploratory relation. 
+Used to infer if a given nutrient may contribute to the requirements of a goal, condition, type of user, or other relevant class."@en
+    
+    Range: 
+        <http://purl.org/nact#Nutrient>
+    
+    
+ObjectProperty: <http://purl.org/nact#hasActivityLevel>
+
+    Domain: 
+        <http://purl.org/nact#Activity>
+    
+    Range: 
+        <http://purl.org/nact#Activity_level>
+    
+    
+ObjectProperty: <http://purl.org/nact#hasAllergy>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No further axioms are expected to be included in this version."@en
+    
+    SubPropertyOf: 
+        <http://purl.org/nact#hasCondition>
+    
+    Domain: 
+        <http://purl.org/nact#Person>
+    
+    Range: 
+        <http://purl.org/nact#Allergy>
+    
+    
+ObjectProperty: <http://purl.org/nact#hasCharacteristic>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No further axioms are expected to be included in this version."@en
+    
+    
+ObjectProperty: <http://purl.org/nact#hasCondition>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No further axioms are expected to be included in this version."@en
+    
+    Domain: 
+        <http://purl.org/nact#Person>
+    
+    Range: 
+        <http://purl.org/nact#Condition>
+    
+    
+ObjectProperty: <http://purl.org/nact#hasFood>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No further axioms are expected to be included in this version."@en
+    
+    
+ObjectProperty: <http://purl.org/nact#hasGoal>
+
+    Range: 
+        <http://purl.org/nact#Goal>
+    
+    
+ObjectProperty: <http://purl.org/nact#hasIntensity>
+
+    Domain: 
+        <http://purl.org/nact#Exercise>
+    
+    Range: 
+        <http://purl.org/nact#Intensity>
+    
+    
+ObjectProperty: <http://purl.org/nact#hasIntolerance>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No further axioms are expected to be included in this version."@en
+    
+    SubPropertyOf: 
+        <http://purl.org/nact#hasCondition>
+    
+    Domain: 
+        <http://purl.org/nact#Person>
+    
+    Range: 
+        <http://purl.org/nact#Intolerance>
+    
+    
+ObjectProperty: <http://purl.org/nact#hasPreference>
+
+    Annotations: 
+        rdfs:comment "Used to construct recommendation candidate profiles (as GCIs). 
+Refer to main publication for complete usage example."@en,
+        <http://www.w3.org/2004/02/skos/core#example> "some hasPreference Vegetable SubClassOf <unique usernameuser identifier as class>"@en,
+        <http://www.w3.org/2004/02/skos/core#historyNote> "Was:
+hasInterest"@en
+    
+    InverseOf: 
+        <http://purl.org/nact#includes>
+    
+    
+ObjectProperty: <http://purl.org/nact#hasProperty>
+
+    Range: 
+        <http://purl.org/nact#Property>
+    
+    
+ObjectProperty: <http://purl.org/nact#highIn>
+
+    Annotations: 
+        rdfs:comment "High participation of nutrient to food."@en
+    
+    SubPropertyOf: 
+        <http://purl.org/nact#containsNutrient>
+    
+    Domain: 
+        <http://purl.org/nact#Food>
+    
+    Range: 
+        <http://purl.org/nact#Nutrient>
+    
+    
+ObjectProperty: <http://purl.org/nact#includes>
+
+    Annotations: 
+        rdfs:comment "Used to construct recommendation candidate profiles, e.g. meal profiles, activity profiles, restaurant menu item profiles (as GCIs). 
+Refer to main publication for complete usage example."@en,
+        <http://www.w3.org/2004/02/skos/core#example> "some includes Spinach SubClassOf <unique identifier of candidate meal as class>"@en
+    
+    InverseOf: 
+        <http://purl.org/nact#hasPreference>
+    
+    
+ObjectProperty: <http://purl.org/nact#lowIn>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."@en,
+        rdfs:comment "Low participation of nutrient to food."@en
+    
+    SubPropertyOf: 
+        <http://purl.org/nact#containsNutrient>
+    
+    Domain: 
+        <http://purl.org/nact#Food>
+    
+    Range: 
+        <http://purl.org/nact#Nutrient>
+    
+    
+Class: <http://purl.org/nact#A>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Vitamin_A"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Vitamin>,
+        <http://purl.org/nact#hasProperty> only <http://purl.org/nact#Antioxidant>
+    
+    
+Class: <http://purl.org/nact#Activity>
+
+    SubClassOf: 
+        <http://purl.org/nact#hasProperty> only <http://purl.org/nact#Activity_property>
+    
+    
+Class: <http://purl.org/nact#Activity_level>
+
+    SubClassOf: 
+        <http://purl.org/nact#Activity_property>
+    
+    
+Class: <http://purl.org/nact#Activity_property>
+
+    SubClassOf: 
+        <http://purl.org/nact#Property>
+    
+    
+Class: <http://purl.org/nact#Activity_type>
+
+    SubClassOf: 
+        <http://purl.org/nact#Activity_property>
+    
+    
+Class: <http://purl.org/nact#Adolescent>
+
+    SubClassOf: 
+        <http://purl.org/nact#Person>
+    
+    
+Class: <http://purl.org/nact#Adult>
+
+    SubClassOf: 
+        <http://purl.org/nact#Person>
+    
+    
+Class: <http://purl.org/nact#Aerobic>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cardio>
+    
+    
+Class: <http://purl.org/nact#Afternoon_snack>
+
+    SubClassOf: 
+        <http://purl.org/nact#Snack>
+    
+    
+Class: <http://purl.org/nact#Alcohol>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Alcoholic_beverage"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Drink>
+    
+    
+Class: <http://purl.org/nact#Allergen>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food_property>
+    
+    
+Class: <http://purl.org/nact#Allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Condition>
+    
+    
+Class: <http://purl.org/nact#Allium>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bulb_and_stem>
+    
+    
+Class: <http://purl.org/nact#Allowed_Cod_liver_oil>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#historyNote> "Was:
+ExCod_liver_oil"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#GCIs>
+    
+    
+Class: <http://purl.org/nact#Allowed_CrustShellfish>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#historyNote> "Was:
+ExCrustShellfish"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#GCIs>
+    
+    
+Class: <http://purl.org/nact#Allowed_Dairy>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#historyNote> "Was:
+ExDairy"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#GCIs>
+    
+    
+Class: <http://purl.org/nact#Allowed_Egg>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#historyNote> "Was:
+ExEgg"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#GCIs>
+    
+    
+Class: <http://purl.org/nact#Allowed_Fish>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#historyNote> "Was:
+ExFish"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#GCIs>
+    
+    
+Class: <http://purl.org/nact#Allowed_Fish_oil>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#historyNote> "Was:
+ExFish_oil"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#GCIs>
+    
+    
+Class: <http://purl.org/nact#Allowed_Meat>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#historyNote> "Was:
+ExMeat"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#GCIs>
+    
+    
+Class: <http://purl.org/nact#Allowed_Mollusc>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#historyNote> "Was:
+ExMollusc"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#GCIs>
+    
+    
+Class: <http://purl.org/nact#Allowed_Pork>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#historyNote> "Was:
+ExPork"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#GCIs>
+    
+    
+Class: <http://purl.org/nact#Allowed_Rabbit>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#historyNote> "Was:
+ExRabbit"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#GCIs>
+    
+    
+Class: <http://purl.org/nact#Allowed_Red_Meat>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#historyNote> "Was:
+ExRedMeat"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#GCIs>
+    
+    
+Class: <http://purl.org/nact#Allowed_Seafood>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#historyNote> "Was:
+ExSeafood"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#GCIs>
+    
+    
+Class: <http://purl.org/nact#Allowed_Sugar>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#historyNote> "Was:
+ExSugar"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#GCIs>
+    
+    
+Class: <http://purl.org/nact#Allspice>
+
+    SubClassOf: 
+        <http://purl.org/nact#Spice>
+    
+    
+Class: <http://purl.org/nact#Almond>
+
+    SubClassOf: 
+        <http://purl.org/nact#Tree_nut>
+    
+    
+Class: <http://purl.org/nact#Almond_butter>
+
+    SubClassOf: 
+        <http://purl.org/nact#Lactose-free_dairy>
+    
+    
+Class: <http://purl.org/nact#Almond_milk>
+
+    SubClassOf: 
+        <http://purl.org/nact#Lactose-free_dairy>
+    
+    
+Class: <http://purl.org/nact#Alpha_carotene>
+
+    SubClassOf: 
+        <http://purl.org/nact#Carotenoid>
+    
+    
+Class: <http://purl.org/nact#Alternatives>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>
+    
+    
+Class: <http://purl.org/nact#Amaranth>
+
+    SubClassOf: 
+        <http://purl.org/nact#Pseudocereal>
+    
+    
+Class: <http://purl.org/nact#Amine_intolerance>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Intolerance>
+    
+    
+Class: <http://purl.org/nact#Anaemia>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Condition>
+    
+    
+Class: <http://purl.org/nact#Anchovy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Small_Fish>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Omega_3>
+    
+    
+Class: <http://purl.org/nact#Angina>
+
+    SubClassOf: 
+        <http://purl.org/nact#CVD>
+    
+    
+Class: <http://purl.org/nact#Anise_allergy>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Anthropometrical_indicator>
+
+    SubClassOf: 
+        <http://purl.org/nact#Body_measurement>
+    
+    
+Class: <http://purl.org/nact#Anti-inflammatory>
+
+    SubClassOf: 
+        <http://purl.org/nact#Nutrient_property>
+    
+    
+Class: <http://purl.org/nact#Antimicrobial>
+
+    SubClassOf: 
+        <http://purl.org/nact#Nutrient_property>
+    
+    
+Class: <http://purl.org/nact#Antioxidant>
+
+    SubClassOf: 
+        <http://purl.org/nact#Nutrient_property>
+    
+    
+Class: <http://purl.org/nact#Apple>
+
+    SubClassOf: 
+        <http://purl.org/nact#Pome>
+    
+    
+Class: <http://purl.org/nact#Apricot>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fruit>
+    
+    
+Class: <http://purl.org/nact#Arame>
+
+    SubClassOf: 
+        <http://purl.org/nact#Seaweed>
+    
+    
+Class: <http://purl.org/nact#Artichoke>
+
+    SubClassOf: 
+        <http://purl.org/nact#Vegetable>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Arugula>
+
+    Annotations: 
+        rdfs:comment "TODO: detangle all. Leave only one preferred label, add others to alt labels."@en
+    
+    EquivalentTo: 
+        <http://purl.org/nact#Rocket>
+    
+    SubClassOf: 
+        <http://purl.org/nact#Dark_leafy_greens>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#A>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#C>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#K>
+    
+    
+Class: <http://purl.org/nact#Asparagus>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bulb_and_stem>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Athlete>
+
+    SubClassOf: 
+        <http://purl.org/nact#Person>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Increase_carbs>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Increase_protein>
+    
+    
+Class: <http://purl.org/nact#Aubergine>
+
+    EquivalentTo: 
+        <http://purl.org/nact#Eggplant>
+    
+    SubClassOf: 
+        <http://purl.org/nact#Nightshades>
+    
+    
+Class: <http://purl.org/nact#Avocado>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fruit>,
+        <http://purl.org/nact#Superfood>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#C>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#E>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#K>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Magnesium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Potassium>
+    
+    
+Class: <http://purl.org/nact#Avocado_allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#B12>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Cobalamin"@en,
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Vitamin_B12"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#B>
+    
+    
+Class: <http://purl.org/nact#B1>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Thiamin"@en,
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Vitamin_B1"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#B>
+    
+    
+Class: <http://purl.org/nact#B2>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Riboflavin"@en,
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Vitamin_B2"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#B>
+    
+    
+Class: <http://purl.org/nact#B3>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Niacin"@en,
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Vitamin_B3"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#B>
+    
+    
+Class: <http://purl.org/nact#B4>
+
+    Annotations: 
+        rdfs:comment "Not a vitamin, but often grouped with the vitamin B complex due to its similarities"@en,
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Choline"@en,
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Vitamin_B4"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#B>
+    
+    
+Class: <http://purl.org/nact#B5>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Pantothenic_acid"@en,
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Vitamin_B5"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#B>
+    
+    
+Class: <http://purl.org/nact#B6>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Pyridoxal-5-Phosphate"@en,
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Pyridoxamine"@en,
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Pyridoxine"@en,
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Vitamin_B6"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#B>
+    
+    
+Class: <http://purl.org/nact#B7>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Biotin"@en,
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Vitamin_B7"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#B>
+    
+    
+Class: <http://purl.org/nact#B9>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Folate"@en,
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Folic_acid"@en,
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Vitamin_B9"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#B>
+    
+    
+Class: <http://purl.org/nact#B>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Vitamin_B"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Vitamin>
+    
+    
+Class: <http://purl.org/nact#BMI>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Body_Mass_Index"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Anthropometrical_indicator>
+    
+    
+Class: <http://purl.org/nact#BMR>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Basal_Metabolic_Rate"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Body_measurement>
+    
+    
+Class: <http://purl.org/nact#Bacon>
+
+    SubClassOf: 
+        <http://purl.org/nact#Pork>
+    
+    
+Class: <http://purl.org/nact#Bagel>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bread>
+    
+    
+Class: <http://purl.org/nact#Baked>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cooked>
+    
+    
+Class: <http://purl.org/nact#Baker_yeast>
+
+    SubClassOf: 
+        <http://purl.org/nact#Yeast>
+    
+    
+Class: <http://purl.org/nact#Balance_training>
+
+    SubClassOf: 
+        <http://purl.org/nact#Exercise>
+    
+    
+Class: <http://purl.org/nact#Bamboo_shoot>
+
+    SubClassOf: 
+        <http://purl.org/nact#Vegetable>
+    
+    
+Class: <http://purl.org/nact#Banana>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fruit>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#B9>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#C>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Fiber>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Magnesium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B6>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Potassium>
+    
+    
+Class: <http://purl.org/nact#Banana_allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Barley>
+
+    SubClassOf: 
+        <http://purl.org/nact#Grains>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Gluten>
+    
+    
+Class: <http://purl.org/nact#Basmati>
+
+    SubClassOf: 
+        <http://purl.org/nact#White_rice>
+    
+    
+Class: <http://purl.org/nact#Bean>
+
+    Annotations: 
+        rdfs:comment "Beans can prevent heart disease
+Beans can fight cancer
+Beans can lower cholesterol
+Beans can help lose weight
+Beans can help manage diabetes (decrease blood sugar)
+--
+Beans can cause migraines
+Beans can raise blood pressure
+Beans can interfere with vitamin absorption
+Beans can rigger gout 
+Beans can make you gassy"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Legume>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Carbohydrate>
+    
+    
+Class: <http://purl.org/nact#Bee_product>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>
+    
+    
+Class: <http://purl.org/nact#Beef>
+
+    SubClassOf: 
+        <http://purl.org/nact#Red_meat>
+    
+    
+Class: <http://purl.org/nact#Beetroot>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Beets"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Root_vegetable>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Bell_pepper>
+
+    EquivalentTo: 
+        <http://purl.org/nact#Capsicum_pepper>
+    
+    SubClassOf: 
+        <http://purl.org/nact#Nightshades>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#A>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B9>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#C>
+    
+    
+Class: <http://purl.org/nact#Bent-over_row>
+
+    SubClassOf: 
+        <http://purl.org/nact#Resistance_training>,
+        <http://purl.org/nact#Strength_training>,
+        <http://purl.org/nact#Workout>
+    
+    
+Class: <http://purl.org/nact#Berry>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fruit>,
+        <http://purl.org/nact#Superfood>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#B9>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Copper>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Manganese>,
+        <http://purl.org/nact#hasProperty> only <http://purl.org/nact#Antioxidant>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#C>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fiber>
+    
+    
+Class: <http://purl.org/nact#Beta_carotene>
+
+    SubClassOf: 
+        <http://purl.org/nact#Carotenoid>,
+        <http://purl.org/nact#hasProperty> only <http://purl.org/nact#Antioxidant>
+    
+    
+Class: <http://purl.org/nact#Beverage>
+
+    SubClassOf: 
+        <http://purl.org/nact#Meal>
+    
+    
+Class: <http://purl.org/nact#Biochemical_indicator>
+
+    SubClassOf: 
+        <http://purl.org/nact#Body_measurement>
+    
+    
+Class: <http://purl.org/nact#Biscuit>
+
+    SubClassOf: 
+        <http://purl.org/nact#Confectionery>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Butter>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Egg>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Flour>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Sugar>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Carbohydrate>
+    
+    
+Class: <http://purl.org/nact#Bison>
+
+    SubClassOf: 
+        <http://purl.org/nact#Red_meat>
+    
+    
+Class: <http://purl.org/nact#Black_bean>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bean>
+    
+    
+Class: <http://purl.org/nact#Black_currant>
+
+    SubClassOf: 
+        <http://purl.org/nact#Berry>
+    
+    
+Class: <http://purl.org/nact#Black_tea>
+
+    SubClassOf: 
+        <http://purl.org/nact#Tea>
+    
+    
+Class: <http://purl.org/nact#Blackberry>
+
+    SubClassOf: 
+        <http://purl.org/nact#Berry>
+    
+    
+Class: <http://purl.org/nact#Blood_pressure>
+
+    SubClassOf: 
+        <http://purl.org/nact#Psysiological_indicator>
+    
+    
+Class: <http://purl.org/nact#Blueberry>
+
+    SubClassOf: 
+        <http://purl.org/nact#Berry>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#K>
+    
+    
+Class: <http://purl.org/nact#Boar>
+
+    SubClassOf: 
+        <http://purl.org/nact#Red_meat>
+    
+    
+Class: <http://purl.org/nact#Body_fat>
+
+    SubClassOf: 
+        <http://purl.org/nact#Anthropometrical_indicator>
+    
+    
+Class: <http://purl.org/nact#Body_measurement>
+
+    SubClassOf: 
+        <http://purl.org/nact#Property>
+    
+    
+Class: <http://purl.org/nact#Boiled>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cooked>
+    
+    
+Class: <http://purl.org/nact#Bone_mass>
+
+    SubClassOf: 
+        <http://purl.org/nact#Anthropometrical_indicator>
+    
+    
+Class: <http://purl.org/nact#Bran>
+
+    SubClassOf: 
+        <http://purl.org/nact#Grains>
+    
+    
+Class: <http://purl.org/nact#Brazil_nut>
+
+    SubClassOf: 
+        <http://purl.org/nact#Tree_nut>
+    
+    
+Class: <http://purl.org/nact#Bread>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Carbohydrate>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Gluten>
+    
+    
+Class: <http://purl.org/nact#Breadcrumbs>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bread>
+    
+    
+Class: <http://purl.org/nact#Breadsticks>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Bread_sticks"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Bread>
+    
+    
+Class: <http://purl.org/nact#Breakfast>
+
+    SubClassOf: 
+        <http://purl.org/nact#Meal>
+    
+    
+Class: <http://purl.org/nact#Bream>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fish>
+    
+    
+Class: <http://purl.org/nact#Bresaola>
+
+    SubClassOf: 
+        <http://purl.org/nact#Pork>
+    
+    
+Class: <http://purl.org/nact#Brewer_yeast>
+
+    SubClassOf: 
+        <http://purl.org/nact#Yeast>
+    
+    
+Class: <http://purl.org/nact#Brie>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cheese>
+    
+    
+Class: <http://purl.org/nact#Broccoli>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cruciferous>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#A>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#C>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Broiled>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cooked>
+    
+    
+Class: <http://purl.org/nact#Brown_bread>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bread>
+    
+    
+Class: <http://purl.org/nact#Brown_rice>
+
+    SubClassOf: 
+        <http://purl.org/nact#Rice>
+    
+    
+Class: <http://purl.org/nact#Bruschetta>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bread>
+    
+    
+Class: <http://purl.org/nact#Brussels_sprouts>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cruciferous>
+    
+    
+Class: <http://purl.org/nact#Bulb_and_stem>
+
+    Annotations: 
+        rdfs:comment "See again nutrients. Might have been a mix up with root vegetables"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Vegetable>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#B>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#B9>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Beta_carotene>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#C>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Magnesium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Potassium>
+    
+    
+Class: <http://purl.org/nact#Bun>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bread>
+    
+    
+Class: <http://purl.org/nact#Burger>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Bread>
+    
+    
+Class: <http://purl.org/nact#Butter>
+
+    SubClassOf: 
+        <http://purl.org/nact#Dairy>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fat>
+    
+    
+Class: <http://purl.org/nact#Buttermilk>
+
+    SubClassOf: 
+        <http://purl.org/nact#Dairy>
+    
+    
+Class: <http://purl.org/nact#C>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Vitamin_C"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Vitamin>,
+        <http://purl.org/nact#hasProperty> only <http://purl.org/nact#Antioxidant>
+    
+    
+Class: <http://purl.org/nact#CVD>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Cardiovascular_Disease"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Condition>,
+        <http://purl.org/nact#goalActivity> only <http://purl.org/nact#Cardio>,
+        <http://purl.org/nact#goalActivity> only <http://purl.org/nact#Endurance_training>,
+        <http://purl.org/nact#goalActivity> only <http://purl.org/nact#Strength_training>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Reduce_fat_intake>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Reduce_salt_intake>
+    
+    
+Class: <http://purl.org/nact#Cabbage>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cruciferous>
+    
+    
+Class: <http://purl.org/nact#Caffeine>
+
+    SubClassOf: 
+        <http://purl.org/nact#Nutrient>
+    
+    
+Class: <http://purl.org/nact#Caffeine_intolerance>
+
+    SubClassOf: 
+        <http://purl.org/nact#Intolerance>
+    
+    
+Class: <http://purl.org/nact#Cake>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Sugar>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Carbohydrate>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Gluten>
+    
+    
+Class: <http://purl.org/nact#Calamari>
+
+    SubClassOf: 
+        <http://purl.org/nact#Squid>
+    
+    
+Class: <http://purl.org/nact#Calcium>
+
+    SubClassOf: 
+        <http://purl.org/nact#Electrolyte>,
+        <http://purl.org/nact#Macromineral>
+    
+    
+Class: <http://purl.org/nact#Calcium_deficiency>
+
+    SubClassOf: 
+        <http://purl.org/nact#Deficiency>
+    
+    
+Class: <http://purl.org/nact#Calculated_value>
+
+    SubClassOf: 
+        <http://purl.org/nact#Body_measurement>
+    
+    
+Class: <http://purl.org/nact#Caloric_intake>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal_measurement>
+    
+    
+Class: <http://purl.org/nact#Calories>
+
+    SubClassOf: 
+        <http://purl.org/nact#Property>
+    
+    
+Class: <http://purl.org/nact#Calzone>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Carbohydrate>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Gluten>
+    
+    
+Class: <http://purl.org/nact#Camembert>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cheese>
+    
+    
+Class: <http://purl.org/nact#Canned>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cooking-preparation_style>
+    
+    
+Class: <http://purl.org/nact#Canola_oil>
+
+    EquivalentTo: 
+        <http://purl.org/nact#Rapeseed_oil>
+    
+    SubClassOf: 
+        <http://purl.org/nact#Vegetable_oil>
+    
+    
+Class: <http://purl.org/nact#Capsicum_pepper>
+
+    EquivalentTo: 
+        <http://purl.org/nact#Bell_pepper>
+    
+    SubClassOf: 
+        <http://purl.org/nact#Peppers>
+    
+    
+Class: <http://purl.org/nact#Capuccino>
+
+    SubClassOf: 
+        <http://purl.org/nact#Coffee>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Milk>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Lactose>
+    
+    
+Class: <http://purl.org/nact#Carbohydrate>
+
+    SubClassOf: 
+        <http://purl.org/nact#Macronutrient>
+    
+    
+Class: <http://purl.org/nact#Cardio>
+
+    SubClassOf: 
+        <http://purl.org/nact#Exercise>
+    
+    
+Class: <http://purl.org/nact#Carotenoid>
+
+    Annotations: 
+        rdfs:comment "Wiki note: not accepted as essential nutrients"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Vitamin>
+    
+    
+Class: <http://purl.org/nact#Carrot>
+
+    SubClassOf: 
+        <http://purl.org/nact#Root_vegetable>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Cashew>
+
+    SubClassOf: 
+        <http://purl.org/nact#Tree_nut>
+    
+    
+Class: <http://purl.org/nact#Catfish>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fish>
+    
+    
+Class: <http://purl.org/nact#Cauliflower>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cruciferous>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Celery>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bulb_and_stem>
+    
+    
+Class: <http://purl.org/nact#Celery_allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Celiac_disease>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Condition>
+    
+    
+Class: <http://purl.org/nact#Cereal>
+
+    SubClassOf: 
+        <http://purl.org/nact#Grains>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Gluten>
+    
+    
+Class: <http://purl.org/nact#Chamomille_allergy>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Cheese>
+
+    SubClassOf: 
+        <http://purl.org/nact#Dairy>
+    
+    
+Class: <http://purl.org/nact#Cheesecake>
+
+    SubClassOf: 
+        <http://purl.org/nact#Confectionery>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Biscuit>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Cheese>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Egg>
+    
+    
+Class: <http://purl.org/nact#Cherry>
+
+    SubClassOf: 
+        <http://purl.org/nact#Drupes>
+    
+    
+Class: <http://purl.org/nact#Chestnut>
+
+    SubClassOf: 
+        <http://purl.org/nact#Tree_nut>
+    
+    
+Class: <http://purl.org/nact#Chia>
+
+    SubClassOf: 
+        <http://purl.org/nact#Pseudocereal>,
+        <http://purl.org/nact#Superfood>
+    
+    
+Class: <http://purl.org/nact#Chicken>
+
+    SubClassOf: 
+        <http://purl.org/nact#Poultry>
+    
+    
+Class: <http://purl.org/nact#Chicken_ham>
+
+    SubClassOf: 
+        <http://purl.org/nact#Chicken>
+    
+    
+Class: <http://purl.org/nact#Chickpea>
+
+    SubClassOf: 
+        <http://purl.org/nact#Legume>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fiber>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Iron>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Protein>
+    
+    
+Class: <http://purl.org/nact#Chicory>
+
+    SubClassOf: 
+        <http://purl.org/nact#Vegetable>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Child>
+
+    SubClassOf: 
+        <http://purl.org/nact#Person>
+    
+    
+Class: <http://purl.org/nact#Chili_pepper>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Chilly_pepper"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Peppers>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Chive>
+
+    SubClassOf: 
+        <http://purl.org/nact#Allium>
+    
+    
+Class: <http://purl.org/nact#Chloride>
+
+    SubClassOf: 
+        <http://purl.org/nact#Macromineral>
+    
+    
+Class: <http://purl.org/nact#Chocolate>
+
+    SubClassOf: 
+        <http://purl.org/nact#Confectionery>
+    
+    
+Class: <http://purl.org/nact#Cholesterol>
+
+    SubClassOf: 
+        <http://purl.org/nact#Biochemical_indicator>
+    
+    
+Class: <http://purl.org/nact#Cinnamon>
+
+    SubClassOf: 
+        <http://purl.org/nact#Spice>
+    
+    
+Class: <http://purl.org/nact#Citrus>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fruit>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#B1>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#B3>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#B6>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#B9>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Calcium>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Copper>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Magnesium>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Phosphorus>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Potassium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#C>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fiber>
+    
+    
+Class: <http://purl.org/nact#Clam>
+
+    SubClassOf: 
+        <http://purl.org/nact#Mollusc>,
+        <http://purl.org/nact#Seafood>
+    
+    
+Class: <http://purl.org/nact#Clementine>
+
+    SubClassOf: 
+        <http://purl.org/nact#Citrus>
+    
+    
+Class: <http://purl.org/nact#Clove>
+
+    SubClassOf: 
+        <http://purl.org/nact#Spice>
+    
+    
+Class: <http://purl.org/nact#Cobalt>
+
+    SubClassOf: 
+        <http://purl.org/nact#Micromineral>
+    
+    
+Class: <http://purl.org/nact#Coconut_milk>
+
+    SubClassOf: 
+        <http://purl.org/nact#Lactose-free_dairy>
+    
+    
+Class: <http://purl.org/nact#Coconut_oil>
+
+    SubClassOf: 
+        <http://purl.org/nact#Superfood>,
+        <http://purl.org/nact#Vegetable_oil>
+    
+    
+Class: <http://purl.org/nact#Cod>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fish>
+    
+    
+Class: <http://purl.org/nact#Cod_liver_oil>
+
+    SubClassOf: 
+        <http://purl.org/nact#Oil>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#A>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#D>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Omega_3>
+    
+    
+Class: <http://purl.org/nact#Coffee>
+
+    SubClassOf: 
+        <http://purl.org/nact#Drink>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Caffeine>
+    
+    
+Class: <http://purl.org/nact#Collard>
+
+    SubClassOf: 
+        <http://purl.org/nact#Dark_leafy_greens>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#A>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B9>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#C>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Calcium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#K>
+    
+    
+Class: <http://purl.org/nact#Common_bean>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bean>
+    
+    
+Class: <http://purl.org/nact#Compound_food>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>
+    
+    
+Class: <http://purl.org/nact#Condiment>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>
+    
+    
+Class: <http://purl.org/nact#Condition>
+
+    
+Class: <http://purl.org/nact#Confectionery>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Sugar>
+    
+    
+Class: <http://purl.org/nact#Cooked>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cooking-preparation_style>
+    
+    DisjointWith: 
+        <http://purl.org/nact#Raw>
+    
+    
+Class: <http://purl.org/nact#Cookie>
+
+    SubClassOf: 
+        <http://purl.org/nact#Confectionery>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Butter>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Flour>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Carbohydrate>
+    
+    
+Class: <http://purl.org/nact#Cooking-preparation_style>
+
+    SubClassOf: 
+        <http://purl.org/nact#Property>
+    
+    
+Class: <http://purl.org/nact#Copper>
+
+    SubClassOf: 
+        <http://purl.org/nact#Micromineral>
+    
+    
+Class: <http://purl.org/nact#Coriander>
+
+    SubClassOf: 
+        <http://purl.org/nact#Herb>
+    
+    
+Class: <http://purl.org/nact#Corn>
+
+    SubClassOf: 
+        <http://purl.org/nact#Grains>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Carbohydrate>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Corn_starch>
+
+    SubClassOf: 
+        <http://purl.org/nact#Culinary_starches>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Carbohydrate>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Cottage_cheese>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cheese>
+    
+    
+Class: <http://purl.org/nact#Courgette>
+
+    EquivalentTo: 
+        <http://purl.org/nact#Summer_squash>,
+        <http://purl.org/nact#Zucchini>
+    
+    SubClassOf: 
+        <http://purl.org/nact#Squash>
+    
+    
+Class: <http://purl.org/nact#Couscous>
+
+    SubClassOf: 
+        <http://purl.org/nact#Pasta>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Semolina>
+    
+    
+Class: <http://purl.org/nact#Cow_milk_cheese>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cheese>
+    
+    
+Class: <http://purl.org/nact#Crab>
+
+    SubClassOf: 
+        <http://purl.org/nact#Crustacean_shellfish>
+    
+    
+Class: <http://purl.org/nact#Cracker>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bread>
+    
+    
+Class: <http://purl.org/nact#Cranberry>
+
+    SubClassOf: 
+        <http://purl.org/nact#Berry>
+    
+    
+Class: <http://purl.org/nact#Crayfish>
+
+    SubClassOf: 
+        <http://purl.org/nact#Crustacean_shellfish>
+    
+    
+Class: <http://purl.org/nact#Cream>
+
+    SubClassOf: 
+        <http://purl.org/nact#Dairy>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fat>
+    
+    
+Class: <http://purl.org/nact#Cream_cheese>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cheese>
+    
+    
+Class: <http://purl.org/nact#Crispbread>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cracker>
+    
+    
+Class: <http://purl.org/nact#Crouton>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "croûtons"@fr
+    
+    SubClassOf: 
+        <http://purl.org/nact#Bread>
+    
+    
+Class: <http://purl.org/nact#Cruciferous>
+
+    SubClassOf: 
+        <http://purl.org/nact#Vegetable>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Protein>,
+        <http://purl.org/nact#hasProperty> only <http://purl.org/nact#Anti-inflammatory>,
+        <http://purl.org/nact#hasProperty> only <http://purl.org/nact#Antioxidant>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B9>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#K>
+    
+    
+Class: <http://purl.org/nact#Crunch>
+
+    SubClassOf: 
+        <http://purl.org/nact#Workout>
+    
+    
+Class: <http://purl.org/nact#Crustacean_allergy>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Shellfish_allergy"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    DisjointWith: 
+        <http://purl.org/nact#Crustacean_shellfish>
+    
+    
+Class: <http://purl.org/nact#Crustacean_shellfish>
+
+    SubClassOf: 
+        <http://purl.org/nact#Shellfish>
+    
+    DisjointWith: 
+        <http://purl.org/nact#Crustacean_allergy>
+    
+    
+Class: <http://purl.org/nact#Cryptoxanthin>
+
+    SubClassOf: 
+        <http://purl.org/nact#Carotenoid>
+    
+    
+Class: <http://purl.org/nact#Cucumber>
+
+    SubClassOf: 
+        <http://purl.org/nact#Vegetable>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Salicylic_Acid>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Water>
+    
+    
+Class: <http://purl.org/nact#Culinary_starches>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>
+    
+    
+Class: <http://purl.org/nact#Cumin>
+
+    SubClassOf: 
+        <http://purl.org/nact#Spice>
+    
+    
+Class: <http://purl.org/nact#Curry>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Chili_pepper>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Coriander>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Cumin>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Ginger>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Turmeric>
+    
+    
+Class: <http://purl.org/nact#Cuttlefish>
+
+    SubClassOf: 
+        <http://purl.org/nact#Mollusc>,
+        <http://purl.org/nact#Seafood>
+    
+    
+Class: <http://purl.org/nact#Cycling>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cardio>
+    
+    
+Class: <http://purl.org/nact#D3>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Vitamin_D3"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#D>
+    
+    
+Class: <http://purl.org/nact#D>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Vitamin_D"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Vitamin>
+    
+    
+Class: <http://purl.org/nact#Dairy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Calcium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#D>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Lactose>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Potassium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Protein>
+    
+    
+Class: <http://purl.org/nact#Dark_chocolate>
+
+    SubClassOf: 
+        <http://purl.org/nact#Chocolate>
+    
+    
+Class: <http://purl.org/nact#Dark_leafy_greens>
+
+    SubClassOf: 
+        <http://purl.org/nact#Superfood>,
+        <http://purl.org/nact#Vegetable>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#C>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Calcium>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Iron>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#K>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Water>,
+        <http://purl.org/nact#hasProperty> only <http://purl.org/nact#Antioxidant>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B9>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Carotenoid>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fiber>
+    
+    
+Class: <http://purl.org/nact#Date>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fruit>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#B6>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Copper>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Iron>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Magnesium>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Manganese>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Potassium>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Protein>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Starch>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Sucrose>,
+        <http://purl.org/nact#hasProperty> only <http://purl.org/nact#Antioxidant>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Carbohydrate>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fiber>
+    
+    
+Class: <http://purl.org/nact#Deadlift>
+
+    SubClassOf: 
+        <http://purl.org/nact#Resistance_training>,
+        <http://purl.org/nact#Strength_training>,
+        <http://purl.org/nact#Workout>
+    
+    
+Class: <http://purl.org/nact#Deficiency>
+
+    SubClassOf: 
+        <http://purl.org/nact#Condition>
+    
+    
+Class: <http://purl.org/nact#Dessert>
+
+    SubClassOf: 
+        <http://purl.org/nact#Meal>
+    
+    
+Class: <http://purl.org/nact#Diastolic_blood_pressure>
+
+    SubClassOf: 
+        <http://purl.org/nact#Blood_pressure>
+    
+    
+Class: <http://purl.org/nact#Diet>
+
+    
+Class: <http://purl.org/nact#Digestive_biscuit>
+
+    SubClassOf: 
+        <http://purl.org/nact#Biscuit>
+    
+    
+Class: <http://purl.org/nact#Dill>
+
+    SubClassOf: 
+        <http://purl.org/nact#Herb>
+    
+    
+Class: <http://purl.org/nact#Dinner>
+
+    SubClassOf: 
+        <http://purl.org/nact#Meal>
+    
+    
+Class: <http://purl.org/nact#Dried>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cooking-preparation_style>
+    
+    
+Class: <http://purl.org/nact#Dried_fruit>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fruit>,
+        <http://purl.org/nact#hasProperty> only <http://purl.org/nact#Antioxidant>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fiber>
+    
+    
+Class: <http://purl.org/nact#Drink>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fluid>
+    
+    
+Class: <http://purl.org/nact#Drupes>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Stone_fruit"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Fruit>
+    
+    
+Class: <http://purl.org/nact#Duck>
+
+    SubClassOf: 
+        <http://purl.org/nact#Poultry>
+    
+    
+Class: <http://purl.org/nact#Duration>
+
+    SubClassOf: 
+        <http://purl.org/nact#Activity_type>
+    
+    
+Class: <http://purl.org/nact#Durum_wheat>
+
+    SubClassOf: 
+        <http://purl.org/nact#Wheat>
+    
+    
+Class: <http://purl.org/nact#Dyslipidaemia>
+
+    SubClassOf: 
+        <http://purl.org/nact#CVD>
+    
+    
+Class: <http://purl.org/nact#E>
+
+    SubClassOf: 
+        <http://purl.org/nact#Vitamin>,
+        <http://purl.org/nact#hasProperty> only <http://purl.org/nact#Antioxidant>
+    
+    
+Class: <http://purl.org/nact#Edamame>
+
+    EquivalentTo: 
+        <http://purl.org/nact#Soya_bean>
+    
+    SubClassOf: 
+        <http://purl.org/nact#Bean>
+    
+    
+Class: <http://purl.org/nact#Eel>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fish>,
+        <http://purl.org/nact#Oily_fish>
+    
+    
+Class: <http://purl.org/nact#Egg>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>,
+        <http://purl.org/nact#Superfood>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#A>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#B2>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#E>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Carotenoid>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#D>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Lecithin>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Omega_3>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Protein>
+    
+    
+Class: <http://purl.org/nact#Egg_allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Egg_noodles>
+
+    SubClassOf: 
+        <http://purl.org/nact#Wheat_noodles>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Egg>
+    
+    
+Class: <http://purl.org/nact#Eggplant>
+
+    EquivalentTo: 
+        <http://purl.org/nact#Aubergine>
+    
+    SubClassOf: 
+        <http://purl.org/nact#Nightshades>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B1>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B6>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fiber>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#K>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Elder>
+
+    SubClassOf: 
+        <http://purl.org/nact#Person>,
+        <http://purl.org/nact#goalActivity> only 
+            (<http://purl.org/nact#Balance_training> or <http://purl.org/nact#Flexibility_training>)
+    
+    
+Class: <http://purl.org/nact#Electrolyte>
+
+    SubClassOf: 
+        <http://purl.org/nact#Mineral>
+    
+    
+Class: <http://purl.org/nact#Electrolytes_deficiency>
+
+    SubClassOf: 
+        <http://purl.org/nact#Deficiency>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Increase_electrolytes>
+    
+    
+Class: <http://purl.org/nact#Endive>
+
+    SubClassOf: 
+        <http://purl.org/nact#Vegetable>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Endurance>
+
+    SubClassOf: 
+        <http://purl.org/nact#Activity_type>
+    
+    
+Class: <http://purl.org/nact#Endurance_training>
+
+    SubClassOf: 
+        <http://purl.org/nact#Exercise>
+    
+    
+Class: <http://purl.org/nact#Energy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Property>
+    
+    
+Class: <http://purl.org/nact#Escarole>
+
+    EquivalentTo: 
+        <http://purl.org/nact#Scarola>
+    
+    SubClassOf: 
+        <http://purl.org/nact#Dark_leafy_greens>
+    
+    
+Class: <http://purl.org/nact#Espresso>
+
+    SubClassOf: 
+        <http://purl.org/nact#Coffee>
+    
+    
+Class: <http://purl.org/nact#Exercise>
+
+    SubClassOf: 
+        <http://purl.org/nact#Activity>
+    
+    
+Class: <http://purl.org/nact#Extensions>
+
+    SubClassOf: 
+        <http://purl.org/nact#Workout>
+    
+    
+Class: <http://purl.org/nact#FODMAPs_intolerance>
+
+    Annotations: 
+        rdfs:comment "Fermentable Oligo-, Di-, Mono-saccharides and polyols."@en,
+        rdfs:comment "Resources cross-check for future release:
+FODMAPs found in: Apples (x), Soft cheeses (x), Honey (x), Milk (v), Artichokes (x), Bread (v), Beans (v), Lentils (v), Beer (v)."@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Intolerance>
+    
+    
+Class: <http://purl.org/nact#Falafel>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only 
+            (<http://purl.org/nact#Chickpea> or <http://purl.org/nact#Fava_bean>)
+    
+    
+Class: <http://purl.org/nact#Fat-free>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "No_fat",
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Non-fat",
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Non_fat",
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Nonfat"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food_attribute>
+    
+    
+Class: <http://purl.org/nact#Fat>
+
+    SubClassOf: 
+        <http://purl.org/nact#Macronutrient>
+    
+    
+Class: <http://purl.org/nact#Fat_burning_exercise>
+
+    SubClassOf: 
+        <http://purl.org/nact#Exercise>
+    
+    
+Class: <http://purl.org/nact#Fava_bean>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bean>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Female>
+
+    SubClassOf: 
+        <http://purl.org/nact#Person>
+    
+    
+Class: <http://purl.org/nact#Fennel>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bulb_and_stem>
+    
+    
+Class: <http://purl.org/nact#Feta>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cheese>
+    
+    
+Class: <http://purl.org/nact#Fiber>
+
+    SubClassOf: 
+        <http://purl.org/nact#Macronutrient>
+    
+    
+Class: <http://purl.org/nact#Fig>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fruit>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B6>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Copper>
+    
+    
+Class: <http://purl.org/nact#Fish>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Iodine>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Iron>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Magnesium>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Potassium>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Zinc>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B2>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Calcium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#D>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Omega_3>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Phosphorus>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Protein>
+    
+    
+Class: <http://purl.org/nact#Fish_allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Fish_oil>
+
+    SubClassOf: 
+        <http://purl.org/nact#Oil>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Omega_3>
+    
+    
+Class: <http://purl.org/nact#Flax>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Flaxseed"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Pseudocereal>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Omega_3>
+    
+    
+Class: <http://purl.org/nact#Flexibility>
+
+    SubClassOf: 
+        <http://purl.org/nact#Activity_type>
+    
+    
+Class: <http://purl.org/nact#Flexibility_training>
+
+    SubClassOf: 
+        <http://purl.org/nact#Exercise>
+    
+    
+Class: <http://purl.org/nact#Flour>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Gluten>
+    
+    
+Class: <http://purl.org/nact#Fluid>
+
+    Annotations: 
+        rdfs:comment "Unique case (with child) of both Food and Nutrient.
+Might be revised in the future."@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food>,
+        <http://purl.org/nact#Nutrient>
+    
+    
+Class: <http://purl.org/nact#Fluoride>
+
+    SubClassOf: 
+        <http://purl.org/nact#Micromineral>
+    
+    
+Class: <http://purl.org/nact#Focaccia>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Carbohydrate>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Gluten>
+    
+    
+Class: <http://purl.org/nact#Folic_acid_deficiency>
+
+    SubClassOf: 
+        <http://purl.org/nact#Deficiency>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Increase_folic_acid_intake>
+    
+    
+Class: <http://purl.org/nact#Food>
+
+    
+Class: <http://purl.org/nact#Food_allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Allergy>
+    
+    
+Class: <http://purl.org/nact#Food_attribute>
+
+    SubClassOf: 
+        <http://purl.org/nact#Property>
+    
+    
+Class: <http://purl.org/nact#Food_property>
+
+    SubClassOf: 
+        <http://purl.org/nact#Property>
+    
+    
+Class: <http://purl.org/nact#Frequency>
+
+    SubClassOf: 
+        <http://purl.org/nact#Activity_property>
+    
+    
+Class: <http://purl.org/nact#Fried>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cooked>
+    
+    
+Class: <http://purl.org/nact#Frozen>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cooking-preparation_style>
+    
+    
+Class: <http://purl.org/nact#Fructose>
+
+    SubClassOf: 
+        <http://purl.org/nact#Carbohydrate>
+    
+    
+Class: <http://purl.org/nact#Fructose_intolerance>
+
+    SubClassOf: 
+        <http://purl.org/nact#Intolerance>
+    
+    
+Class: <http://purl.org/nact#Fruit>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Fructose>
+    
+    
+Class: <http://purl.org/nact#GCIs>
+
+    Annotations: 
+        rdfs:comment "Helper classes, to group frquently used complex concepts in GCIs.
+Purpose: reduce reasoning KB, increase reasoning efficiency."
+    
+    
+Class: <http://purl.org/nact#Garlic>
+
+    SubClassOf: 
+        <http://purl.org/nact#Allium>,
+        <http://purl.org/nact#Superfood>
+    
+    
+Class: <http://purl.org/nact#Garlic_allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Ginger>
+
+    SubClassOf: 
+        <http://purl.org/nact#Spice>,
+        <http://purl.org/nact#Superfood>
+    
+    
+Class: <http://purl.org/nact#Glucose>
+
+    SubClassOf: 
+        <http://purl.org/nact#Carbohydrate>
+    
+    
+Class: <http://purl.org/nact#Gluten-free>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food_attribute>
+    
+    
+Class: <http://purl.org/nact#Gluten-free_products>
+
+    SubClassOf: 
+        <http://purl.org/nact#Alternatives>
+    
+    
+Class: <http://purl.org/nact#Gluten>
+
+    SubClassOf: 
+        <http://purl.org/nact#Protein>
+    
+    
+Class: <http://purl.org/nact#Gluten_allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Wheat_allergy>
+    
+    
+Class: <http://purl.org/nact#Gluten_intolerance>
+
+    SubClassOf: 
+        <http://purl.org/nact#Intolerance>
+    
+    
+Class: <http://purl.org/nact#Goal>
+
+    SubClassOf: 
+        <http://purl.org/nact#Property>
+    
+    
+Class: <http://purl.org/nact#Goal_measurement>
+
+    SubClassOf: 
+        <http://purl.org/nact#Property>
+    
+    
+Class: <http://purl.org/nact#Goat>
+
+    SubClassOf: 
+        <http://purl.org/nact#Red_meat>
+    
+    
+Class: <http://purl.org/nact#Goat_milk_cheese>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cheese>
+    
+    
+Class: <http://purl.org/nact#Goji_berry>
+
+    SubClassOf: 
+        <http://purl.org/nact#Berry>,
+        <http://purl.org/nact#Dried_fruit>
+    
+    
+Class: <http://purl.org/nact#Gouda>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cheese>
+    
+    
+Class: <http://purl.org/nact#Grains>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B1>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B2>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B3>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B9>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Carbohydrate>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fiber>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Iron>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Magnesium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Selenium>
+    
+    
+Class: <http://purl.org/nact#Granola>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Honey>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Nut>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Oat>
+    
+    
+Class: <http://purl.org/nact#Grape>
+
+    Annotations: 
+        rdfs:comment "Botanically, grapes are berries, Nutritionally, if they don't share most pertinent attributes, they should be removed from this category."@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Berry>
+    
+    
+Class: <http://purl.org/nact#Grapefruit>
+
+    SubClassOf: 
+        <http://purl.org/nact#Citrus>
+    
+    
+Class: <http://purl.org/nact#Greek_yoghurt>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Greek_yogurt"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Yoghurt>
+    
+    
+Class: <http://purl.org/nact#Green_bean>
+
+    SubClassOf: 
+        <http://purl.org/nact#Vegetable>
+    
+    
+Class: <http://purl.org/nact#Green_pepper>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bell_pepper>
+    
+    
+Class: <http://purl.org/nact#Green_tea>
+
+    SubClassOf: 
+        <http://purl.org/nact#Superfood>,
+        <http://purl.org/nact#Tea>
+    
+    
+Class: <http://purl.org/nact#Grilled>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cooked>
+    
+    
+Class: <http://purl.org/nact#HDL_cholesterol>
+
+    Annotations: 
+        rdfs:comment "High-density lipoprotein cholesterol"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Cholesterol>
+    
+    
+Class: <http://purl.org/nact#HIIT>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "High_intensity_interval_training"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Exercise>
+    
+    
+Class: <http://purl.org/nact#Haddock>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fish>
+    
+    
+Class: <http://purl.org/nact#Halal>
+
+    SubClassOf: 
+        <http://purl.org/nact#Diet>
+    
+    
+Class: <http://purl.org/nact#Halibut>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fish>
+    
+    
+Class: <http://purl.org/nact#Ham>
+
+    SubClassOf: 
+        <http://purl.org/nact#Pork>
+    
+    
+Class: <http://purl.org/nact#Hare>
+
+    SubClassOf: 
+        <http://purl.org/nact#Red_meat>
+    
+    
+Class: <http://purl.org/nact#Hazelnut>
+
+    SubClassOf: 
+        <http://purl.org/nact#Tree_nut>
+    
+    
+Class: <http://purl.org/nact#Heart>
+
+    SubClassOf: 
+        <http://purl.org/nact#Offal>
+    
+    
+Class: <http://purl.org/nact#Heart_rate>
+
+    SubClassOf: 
+        <http://purl.org/nact#Psysiological_indicator>
+    
+    
+Class: <http://purl.org/nact#Heavy_exercise>
+
+    SubClassOf: 
+        <http://purl.org/nact#Activity_level>
+    
+    
+Class: <http://purl.org/nact#Height>
+
+    SubClassOf: 
+        <http://purl.org/nact#Anthropometrical_indicator>
+    
+    
+Class: <http://purl.org/nact#Hemp_seed>
+
+    SubClassOf: 
+        <http://purl.org/nact#Seed>
+    
+    
+Class: <http://purl.org/nact#Herb>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>
+    
+    
+Class: <http://purl.org/nact#Herbal_tea>
+
+    SubClassOf: 
+        <http://purl.org/nact#Tea>
+    
+    
+Class: <http://purl.org/nact#Herring>
+
+    SubClassOf: 
+        <http://purl.org/nact#Oily_fish>,
+        <http://purl.org/nact#Small_Fish>
+    
+    
+Class: <http://purl.org/nact#High>
+
+    SubClassOf: 
+        <http://purl.org/nact#Level>
+    
+    
+Class: <http://purl.org/nact#Hiking>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cardio>
+    
+    
+Class: <http://purl.org/nact#Honey>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bee_product>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fructose>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Glucose>
+    
+    
+Class: <http://purl.org/nact#Honeydew>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fruit>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#A>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#B6>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Calcium>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Iron>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Magnesium>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Potassium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B9>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#C>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Electrolyte>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#K>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Water>
+    
+    
+Class: <http://purl.org/nact#Horse>
+
+    SubClassOf: 
+        <http://purl.org/nact#Red_meat>
+    
+    
+Class: <http://purl.org/nact#Hummus>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Houmous"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Chickpea>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Garlic>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Lemon>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Tahini>
+    
+    
+Class: <http://purl.org/nact#Hypertension>
+
+    SubClassOf: 
+        <http://purl.org/nact#CVD>
+    
+    
+Class: <http://purl.org/nact#Hyperthrophy>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Condition>
+    
+    
+Class: <http://purl.org/nact#IBD>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Inflammatory_Bowel_Disease"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Condition>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Reduce_fat_intake>
+    
+    
+Class: <http://purl.org/nact#Ice_cream>
+
+    SubClassOf: 
+        <http://purl.org/nact#Dairy>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Sugar>
+    
+    
+Class: <http://purl.org/nact#Implicit_goal>
+
+    Annotations: 
+        rdfs:comment "Helper class, for constructing the User KB.
+Please refer to main publication for usage example."@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Property>
+    
+    
+Class: <http://purl.org/nact#Increase_TDEE>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Increase_activity_duration>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Increase_activity_intensity>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Increase_body_fat>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Increase_carbs>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    DisjointWith: 
+        <http://purl.org/nact#Reduce_carbs>
+    
+    
+Class: <http://purl.org/nact#Increase_electrolytes>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Increase_fat_intake>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Increase_fiber>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Increase_folic_acid_intake>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Increase_fruit_intake>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Increase_iron_intake>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Increase_liquids>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Increase_protein>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Increase_vegetable_intake>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Increase_vitamin_A_intake>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Increase_vitamin_B12_intake>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Increase_vitamin_C_intake>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Increase_vitamin_D_intake>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Insulin>
+
+    SubClassOf: 
+        <http://purl.org/nact#Biochemical_indicator>
+    
+    
+Class: <http://purl.org/nact#Intensity>
+
+    SubClassOf: 
+        <http://purl.org/nact#Activity_property>
+    
+    
+Class: <http://purl.org/nact#Intestines>
+
+    SubClassOf: 
+        <http://purl.org/nact#Offal>
+    
+    
+Class: <http://purl.org/nact#Intolerance>
+
+    SubClassOf: 
+        <http://purl.org/nact#Condition>
+    
+    
+Class: <http://purl.org/nact#Iodine>
+
+    SubClassOf: 
+        <http://purl.org/nact#Micromineral>
+    
+    
+Class: <http://purl.org/nact#Iron>
+
+    Annotations: 
+        rdfs:comment "Dietary iron is found in two forms: heme and nonheme iron. Red meat (beef, lamb, and pork) has a 10-fold higher heme content than white meat (e.g., chicken) (Hooda et al., 2014)."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Micromineral>
+    
+    
+Class: <http://purl.org/nact#Iron_deficiency>
+
+    SubClassOf: 
+        <http://purl.org/nact#Deficiency>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Increase_iron_intake>
+    
+    
+Class: <http://purl.org/nact#Iron_level>
+
+    SubClassOf: 
+        <http://purl.org/nact#Biochemical_indicator>
+    
+    
+Class: <http://purl.org/nact#Jalapeno>
+
+    SubClassOf: 
+        <http://purl.org/nact#Peppers>
+    
+    
+Class: <http://purl.org/nact#Jam>
+
+    SubClassOf: 
+        <http://purl.org/nact#Confectionery>
+    
+    
+Class: <http://purl.org/nact#Jogging>
+
+    SubClassOf: 
+        <http://purl.org/nact#Running>
+    
+    
+Class: <http://purl.org/nact#Juice>
+
+    SubClassOf: 
+        <http://purl.org/nact#Drink>
+    
+    
+Class: <http://purl.org/nact#Jump_rope>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cardio>
+    
+    
+Class: <http://purl.org/nact#Jumping_jacks>
+
+    SubClassOf: 
+        <http://purl.org/nact#Workout>
+    
+    
+Class: <http://purl.org/nact#Jumping_lunge>
+
+    SubClassOf: 
+        <http://purl.org/nact#Lunge>
+    
+    
+Class: <http://purl.org/nact#K1>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Vitamin_K1"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#K>
+    
+    
+Class: <http://purl.org/nact#K2>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Vitamin_K2"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#K>
+    
+    
+Class: <http://purl.org/nact#K>
+
+    SubClassOf: 
+        <http://purl.org/nact#Vitamin>
+    
+    
+Class: <http://purl.org/nact#Kale>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cruciferous>,
+        <http://purl.org/nact#Dark_leafy_greens>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Beta_carotene>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Lutein>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#A>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#C>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#K>
+    
+    
+Class: <http://purl.org/nact#Kebab>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Meat>
+    
+    
+Class: <http://purl.org/nact#Kefir>
+
+    SubClassOf: 
+        <http://purl.org/nact#Dairy>,
+        <http://purl.org/nact#Superfood>
+    
+    
+Class: <http://purl.org/nact#Kelp>
+
+    SubClassOf: 
+        <http://purl.org/nact#Seaweed>
+    
+    
+Class: <http://purl.org/nact#Ketchup>
+
+    SubClassOf: 
+        <http://purl.org/nact#Condiment>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Sugar>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Tomato>
+    
+    
+Class: <http://purl.org/nact#Ketones>
+
+    SubClassOf: 
+        <http://purl.org/nact#Biochemical_indicator>
+    
+    
+Class: <http://purl.org/nact#Kidney_bean>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bean>
+    
+    
+Class: <http://purl.org/nact#Kidney_disease>
+
+    SubClassOf: 
+        <http://purl.org/nact#Condition>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Reduce_protein>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Reduce_salt_intake>
+    
+    
+Class: <http://purl.org/nact#Kiwi>
+
+    Annotations: 
+        rdfs:comment "Botanically, kiwis are berries, Nutritionally, if they don't share most pertinent attributes, they should be removed from this category."@en,
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Kiwifruit"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Berry>
+    
+    
+Class: <http://purl.org/nact#Kiwi_allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Kosher>
+
+    SubClassOf: 
+        <http://purl.org/nact#Diet>
+    
+    
+Class: <http://purl.org/nact#Lacto-ovo>
+
+    Annotations: 
+        rdfs:comment "Defined as lacto-ovo NON pescatarians (so exclude Fish).
+Axioms correspond completely to the parent concept \"Vegetarian\""@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Vegetarian>
+    
+    
+Class: <http://purl.org/nact#Lacto>
+
+    SubClassOf: 
+        <http://purl.org/nact#Vegetarian>
+    
+    
+Class: <http://purl.org/nact#Lactose-free>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Non_dairy"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food_attribute>
+    
+    
+Class: <http://purl.org/nact#Lactose-free_dairy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Alternatives>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Soy>
+    
+    
+Class: <http://purl.org/nact#Lactose>
+
+    SubClassOf: 
+        <http://purl.org/nact#Carbohydrate>
+    
+    
+Class: <http://purl.org/nact#Lactose_intolerance>
+
+    SubClassOf: 
+        <http://purl.org/nact#Intolerance>
+    
+    
+Class: <http://purl.org/nact#Lamb>
+
+    SubClassOf: 
+        <http://purl.org/nact#Red_meat>
+    
+    
+Class: <http://purl.org/nact#Lasagna>
+
+    SubClassOf: 
+        <http://purl.org/nact#Pasta>
+    
+    
+Class: <http://purl.org/nact#Late_night_snack>
+
+    SubClassOf: 
+        <http://purl.org/nact#Snack>
+    
+    
+Class: <http://purl.org/nact#Latte>
+
+    SubClassOf: 
+        <http://purl.org/nact#Coffee>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Milk>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Lactose>
+    
+    
+Class: <http://purl.org/nact#Lecithin>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fat>
+    
+    
+Class: <http://purl.org/nact#Leek>
+
+    SubClassOf: 
+        <http://purl.org/nact#Allium>
+    
+    
+Class: <http://purl.org/nact#Legume>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Pulses"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food>,
+        <http://purl.org/nact#Superfood>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#B>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Iron>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Phosphorus>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Potassium>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Zinc>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B9>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Calcium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fiber>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Protein>
+    
+    
+Class: <http://purl.org/nact#Lemon>
+
+    SubClassOf: 
+        <http://purl.org/nact#Citrus>
+    
+    
+Class: <http://purl.org/nact#Lentil>
+
+    SubClassOf: 
+        <http://purl.org/nact#Legume>
+    
+    
+Class: <http://purl.org/nact#Lettuce>
+
+    SubClassOf: 
+        <http://purl.org/nact#Dark_leafy_greens>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#A>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#C>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#K>
+    
+    
+Class: <http://purl.org/nact#Level>
+
+    SubClassOf: 
+        <http://purl.org/nact#Property>
+    
+    
+Class: <http://purl.org/nact#Light_exercise>
+
+    SubClassOf: 
+        <http://purl.org/nact#Activity_level>
+    
+    
+Class: <http://purl.org/nact#Lime>
+
+    SubClassOf: 
+        <http://purl.org/nact#Citrus>
+    
+    
+Class: <http://purl.org/nact#Linguini>
+
+    SubClassOf: 
+        <http://purl.org/nact#Pasta>
+    
+    
+Class: <http://purl.org/nact#Linseed_allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Liver>
+
+    SubClassOf: 
+        <http://purl.org/nact#Offal>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#A>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Iron>
+    
+    
+Class: <http://purl.org/nact#Lobster>
+
+    SubClassOf: 
+        <http://purl.org/nact#Crustacean_shellfish>
+    
+    
+Class: <http://purl.org/nact#Low-fat>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Extra_lean",
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Lowfat",
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Reduced_fat"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food_attribute>
+    
+    
+Class: <http://purl.org/nact#Low-impact_exercise>
+
+    SubClassOf: 
+        <http://purl.org/nact#Exercise>
+    
+    
+Class: <http://purl.org/nact#Low>
+
+    SubClassOf: 
+        <http://purl.org/nact#Level>
+    
+    
+Class: <http://purl.org/nact#Low_intensity>
+
+    SubClassOf: 
+        <http://purl.org/nact#Intensity>
+    
+    
+Class: <http://purl.org/nact#Low_sodium>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Low_salt"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food_attribute>
+    
+    
+Class: <http://purl.org/nact#Low_sugar>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Semi-sweet"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food_attribute>
+    
+    
+Class: <http://purl.org/nact#Lunch>
+
+    SubClassOf: 
+        <http://purl.org/nact#Meal>
+    
+    
+Class: <http://purl.org/nact#Lung>
+
+    SubClassOf: 
+        <http://purl.org/nact#Offal>
+    
+    
+Class: <http://purl.org/nact#Lunge>
+
+    SubClassOf: 
+        <http://purl.org/nact#Resistance_training>,
+        <http://purl.org/nact#Strength_training>,
+        <http://purl.org/nact#Workout>
+    
+    
+Class: <http://purl.org/nact#Lupin_allergy>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Lutein>
+
+    SubClassOf: 
+        <http://purl.org/nact#Carotenoid>,
+        <http://purl.org/nact#hasProperty> only <http://purl.org/nact#Antioxidant>
+    
+    
+Class: <http://purl.org/nact#Lycopene>
+
+    SubClassOf: 
+        <http://purl.org/nact#Carotenoid>,
+        <http://purl.org/nact#hasProperty> only <http://purl.org/nact#Antioxidant>
+    
+    
+Class: <http://purl.org/nact#Macadamia>
+
+    SubClassOf: 
+        <http://purl.org/nact#Tree_nut>
+    
+    
+Class: <http://purl.org/nact#Macaroni>
+
+    SubClassOf: 
+        <http://purl.org/nact#Pasta>
+    
+    
+Class: <http://purl.org/nact#Mackerel>
+
+    Annotations: 
+        rdfs:comment "higher levels of mercury contamination"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Oily_fish>,
+        <http://purl.org/nact#Small_Fish>
+    
+    
+Class: <http://purl.org/nact#Macromineral>
+
+    SubClassOf: 
+        <http://purl.org/nact#Mineral>
+    
+    
+Class: <http://purl.org/nact#Macronutrient>
+
+    SubClassOf: 
+        <http://purl.org/nact#Nutrient>
+    
+    
+Class: <http://purl.org/nact#Magnesium>
+
+    SubClassOf: 
+        <http://purl.org/nact#Electrolyte>,
+        <http://purl.org/nact#Macromineral>
+    
+    
+Class: <http://purl.org/nact#Magnesium_deficiency>
+
+    SubClassOf: 
+        <http://purl.org/nact#Deficiency>
+    
+    
+Class: <http://purl.org/nact#Mahi_mahi>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fish>
+    
+    
+Class: <http://purl.org/nact#Main_dish>
+
+    SubClassOf: 
+        <http://purl.org/nact#Meal>
+    
+    
+Class: <http://purl.org/nact#Maintain_weight>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Male>
+
+    SubClassOf: 
+        <http://purl.org/nact#Person>
+    
+    
+Class: <http://purl.org/nact#Mandarine>
+
+    SubClassOf: 
+        <http://purl.org/nact#Citrus>
+    
+    
+Class: <http://purl.org/nact#Manganese>
+
+    SubClassOf: 
+        <http://purl.org/nact#Micromineral>
+    
+    
+Class: <http://purl.org/nact#Mango>
+
+    SubClassOf: 
+        <http://purl.org/nact#Drupes>
+    
+    
+Class: <http://purl.org/nact#Margarine>
+
+    SubClassOf: 
+        <http://purl.org/nact#Lactose-free_dairy>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Vegetable_oil>
+    
+    
+Class: <http://purl.org/nact#Marmelade>
+
+    SubClassOf: 
+        <http://purl.org/nact#Jam>
+    
+    
+Class: <http://purl.org/nact#Mayonnaise>
+
+    SubClassOf: 
+        <http://purl.org/nact#Condiment>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Egg>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fat>
+    
+    
+Class: <http://purl.org/nact#Meal>
+
+    
+Class: <http://purl.org/nact#Meat>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#B1>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#B2>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#B3>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#B6>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Iron>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Phosphorus>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Potassium>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Selenium>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Zinc>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B12>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Protein>
+    
+    
+Class: <http://purl.org/nact#Meatball>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Meat>
+    
+    
+Class: <http://purl.org/nact#Melon>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fruit>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Copper>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Fiber>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#K>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Potassium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B6>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#C>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Water>
+    
+    
+Class: <http://purl.org/nact#Micromineral>
+
+    Annotations: 
+        rdfs:comment "Trace mineral"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Mineral>
+    
+    
+Class: <http://purl.org/nact#Micronutrient>
+
+    SubClassOf: 
+        <http://purl.org/nact#Nutrient>
+    
+    
+Class: <http://purl.org/nact#Milk>
+
+    SubClassOf: 
+        <http://purl.org/nact#Dairy>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B12>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Carbohydrate>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Magnesium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Phosphorus>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Potassium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Zinc>
+    
+    
+Class: <http://purl.org/nact#Milk_allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Milk_chocolate>
+
+    SubClassOf: 
+        <http://purl.org/nact#Chocolate>
+    
+    
+Class: <http://purl.org/nact#Mineral>
+
+    SubClassOf: 
+        <http://purl.org/nact#Micronutrient>
+    
+    
+Class: <http://purl.org/nact#Mint>
+
+    SubClassOf: 
+        <http://purl.org/nact#Herb>
+    
+    
+Class: <http://purl.org/nact#Mizithra>
+
+    SubClassOf: 
+        <http://purl.org/nact#Whey_cheese>
+    
+    
+Class: <http://purl.org/nact#Moderate>
+
+    SubClassOf: 
+        <http://purl.org/nact#Level>
+    
+    
+Class: <http://purl.org/nact#Moderate_exercise>
+
+    SubClassOf: 
+        <http://purl.org/nact#Activity_level>
+    
+    
+Class: <http://purl.org/nact#Moderate_intensity>
+
+    SubClassOf: 
+        <http://purl.org/nact#Intensity>
+    
+    
+Class: <http://purl.org/nact#Mollusc>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Mollusk"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food>,
+        <http://purl.org/nact#hasProperty> only <http://purl.org/nact#Antioxidant>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Protein>
+    
+    
+Class: <http://purl.org/nact#Mollusc_allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Monounsaturated_fat>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fat>
+    
+    
+Class: <http://purl.org/nact#Morning_snack>
+
+    SubClassOf: 
+        <http://purl.org/nact#Snack>
+    
+    
+Class: <http://purl.org/nact#Mozarella>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cheese>
+    
+    
+Class: <http://purl.org/nact#Mozzarella>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cheese>
+    
+    
+Class: <http://purl.org/nact#Muesli>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Dried_fruit>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Nut>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Oat>
+    
+    
+Class: <http://purl.org/nact#Mulberry>
+
+    SubClassOf: 
+        <http://purl.org/nact#Berry>
+    
+    
+Class: <http://purl.org/nact#Mullet>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fish>
+    
+    
+Class: <http://purl.org/nact#Multigrain>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Multi-grain"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food_attribute>
+    
+    
+Class: <http://purl.org/nact#Muscle_gain>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Increase_carbs>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Increase_protein>
+    
+    
+Class: <http://purl.org/nact#Muscle_mass>
+
+    SubClassOf: 
+        <http://purl.org/nact#Anthropometrical_indicator>
+    
+    
+Class: <http://purl.org/nact#Musculoskeletal_problem>
+
+    SubClassOf: 
+        <http://purl.org/nact#Condition>,
+        <http://purl.org/nact#goalActivity> only (<http://purl.org/nact#hasIntensity> some <http://purl.org/nact#Low_intensity>)
+    
+    
+Class: <http://purl.org/nact#Mushroom>
+
+    SubClassOf: 
+        <http://purl.org/nact#Superfood>,
+        <http://purl.org/nact#Vegetable>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Mussels>
+
+    SubClassOf: 
+        <http://purl.org/nact#Mollusc>,
+        <http://purl.org/nact#Seafood>
+    
+    
+Class: <http://purl.org/nact#Mustard>
+
+    SubClassOf: 
+        <http://purl.org/nact#Condiment>
+    
+    
+Class: <http://purl.org/nact#Mustard_allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Mustard_seed>
+
+    SubClassOf: 
+        <http://purl.org/nact#Seed>
+    
+    
+Class: <http://purl.org/nact#Mutton>
+
+    SubClassOf: 
+        <http://purl.org/nact#Red_meat>
+    
+    
+Class: <http://purl.org/nact#Nectarine>
+
+    SubClassOf: 
+        <http://purl.org/nact#Citrus>
+    
+    
+Class: <http://purl.org/nact#Nightshades>
+
+    SubClassOf: 
+        <http://purl.org/nact#Vegetable>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Potassium>
+    
+    
+Class: <http://purl.org/nact#No_skin>
+
+    Annotations: 
+        rdfs:comment "Refers to poultry cooked without skin"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food_attribute>
+    
+    
+Class: <http://purl.org/nact#Noodles>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>
+    
+    
+Class: <http://purl.org/nact#Nori>
+
+    SubClassOf: 
+        <http://purl.org/nact#Seaweed>
+    
+    
+Class: <http://purl.org/nact#Nut>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>,
+        <http://purl.org/nact#Superfood>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#E>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fat>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fiber>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Magnesium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Protein>
+    
+    
+Class: <http://purl.org/nact#Nutrient>
+
+    
+Class: <http://purl.org/nact#Nutrient_property>
+
+    SubClassOf: 
+        <http://purl.org/nact#Property>
+    
+    
+Class: <http://purl.org/nact#Nutritional_yeast>
+
+    Annotations: 
+        rdfs:comment "It is naturally low in sodium and calories, as well as fat-free, sugar-free, gluten-free and vegan."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Yeast>
+    
+    
+Class: <http://purl.org/nact#Oat>
+
+    SubClassOf: 
+        <http://purl.org/nact#Grains>
+    
+    
+Class: <http://purl.org/nact#Oat_noodles>
+
+    SubClassOf: 
+        <http://purl.org/nact#Noodles>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Oat>
+    
+    
+Class: <http://purl.org/nact#Oatmeal>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Oat>
+    
+    
+Class: <http://purl.org/nact#Obesity>
+
+    Annotations: 
+        rdfs:comment "BMI >= 30"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Condition>,
+        <http://purl.org/nact#goalActivity> only <http://purl.org/nact#Aerobic>,
+        <http://purl.org/nact#goalActivity> only <http://purl.org/nact#Endurance_training>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Increase_activity_intensity>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Weight_loss>
+    
+    
+Class: <http://purl.org/nact#Octopus>
+
+    SubClassOf: 
+        <http://purl.org/nact#Mollusc>,
+        <http://purl.org/nact#Seafood>
+    
+    
+Class: <http://purl.org/nact#Offal>
+
+    SubClassOf: 
+        <http://purl.org/nact#Meat>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#A>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#D>
+    
+    
+Class: <http://purl.org/nact#Oil>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fat>
+    
+    
+Class: <http://purl.org/nact#Oily_fish>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fish>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Omega_3>
+    
+    
+Class: <http://purl.org/nact#Okra>
+
+    SubClassOf: 
+        <http://purl.org/nact#Vegetable>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Olive>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Antioxidant>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#E>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Olive_oil>
+
+    SubClassOf: 
+        <http://purl.org/nact#Superfood>,
+        <http://purl.org/nact#Vegetable_oil>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Omega_3>
+
+    SubClassOf: 
+        <http://purl.org/nact#Polyunsaturated_fat>,
+        <http://purl.org/nact#hasProperty> only <http://purl.org/nact#Anti-inflammatory>
+    
+    
+Class: <http://purl.org/nact#Omega_6>
+
+    SubClassOf: 
+        <http://purl.org/nact#Polyunsaturated_fat>
+    
+    
+Class: <http://purl.org/nact#Omelette>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Egg>
+    
+    
+Class: <http://purl.org/nact#Onion>
+
+    SubClassOf: 
+        <http://purl.org/nact#Allium>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Orange>
+
+    SubClassOf: 
+        <http://purl.org/nact#Citrus>
+    
+    
+Class: <http://purl.org/nact#Orange_pepper>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bell_pepper>
+    
+    
+Class: <http://purl.org/nact#Oregano>
+
+    SubClassOf: 
+        <http://purl.org/nact#Herb>
+    
+    
+Class: <http://purl.org/nact#Orzo>
+
+    SubClassOf: 
+        <http://purl.org/nact#Pasta>
+    
+    
+Class: <http://purl.org/nact#Overhead_press>
+
+    SubClassOf: 
+        <http://purl.org/nact#Workout>
+    
+    
+Class: <http://purl.org/nact#Overweight>
+
+    Annotations: 
+        rdfs:comment "25 < BMI < 30"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Condition>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Increase_fiber>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Reduce_fat_intake>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Weight_loss>
+    
+    
+Class: <http://purl.org/nact#Ovo>
+
+    SubClassOf: 
+        <http://purl.org/nact#Vegetarian>
+    
+    
+Class: <http://purl.org/nact#Oyster>
+
+    SubClassOf: 
+        <http://purl.org/nact#Mollusc>,
+        <http://purl.org/nact#Seafood>
+    
+    
+Class: <http://purl.org/nact#Panuozzo>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bread>
+    
+    
+Class: <http://purl.org/nact#Papaya>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fruit>
+    
+    
+Class: <http://purl.org/nact#Paprika>
+
+    SubClassOf: 
+        <http://purl.org/nact#Spice>
+    
+    
+Class: <http://purl.org/nact#Parmesan>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cheese>
+    
+    
+Class: <http://purl.org/nact#Parsley>
+
+    SubClassOf: 
+        <http://purl.org/nact#Herb>
+    
+    
+Class: <http://purl.org/nact#Parsnip>
+
+    SubClassOf: 
+        <http://purl.org/nact#Root_vegetable>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Passion_fruit_allergy>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Pasta>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Wheat>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Carbohydrate>
+    
+    
+Class: <http://purl.org/nact#Pea>
+
+    SubClassOf: 
+        <http://purl.org/nact#Legume>
+    
+    
+Class: <http://purl.org/nact#Peach>
+
+    SubClassOf: 
+        <http://purl.org/nact#Drupes>
+    
+    
+Class: <http://purl.org/nact#Peach_allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Peanut>
+
+    SubClassOf: 
+        <http://purl.org/nact#Nut>
+    
+    
+Class: <http://purl.org/nact#Peanut_allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Peanut_butter>
+
+    SubClassOf: 
+        <http://purl.org/nact#Confectionery>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Peanut>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Salt>
+    
+    
+Class: <http://purl.org/nact#Pear>
+
+    SubClassOf: 
+        <http://purl.org/nact#Pome>
+    
+    
+Class: <http://purl.org/nact#Pecan>
+
+    SubClassOf: 
+        <http://purl.org/nact#Tree_nut>
+    
+    
+Class: <http://purl.org/nact#Pepper_Spice>
+
+    SubClassOf: 
+        <http://purl.org/nact#Spice>
+    
+    
+Class: <http://purl.org/nact#Peppermint>
+
+    SubClassOf: 
+        <http://purl.org/nact#Herb>
+    
+    
+Class: <http://purl.org/nact#Peppers>
+
+    SubClassOf: 
+        <http://purl.org/nact#Vegetable>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Perch>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fish>
+    
+    
+Class: <http://purl.org/nact#Peripheral_artery_disease>
+
+    SubClassOf: 
+        <http://purl.org/nact#CVD>,
+        <http://purl.org/nact#goalActivity> only <http://purl.org/nact#Walking>
+    
+    
+Class: <http://purl.org/nact#Persimmon>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Kaki"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Fruit>
+    
+    
+Class: <http://purl.org/nact#Person>
+
+    
+Class: <http://purl.org/nact#Pescatarian>
+
+    SubClassOf: 
+        <http://purl.org/nact#Diet>
+    
+    
+Class: <http://purl.org/nact#Phosphorus>
+
+    SubClassOf: 
+        <http://purl.org/nact#Macromineral>
+    
+    
+Class: <http://purl.org/nact#Pilates>
+
+    SubClassOf: 
+        <http://purl.org/nact#Flexibility_training>,
+        <http://purl.org/nact#Low-impact_exercise>
+    
+    
+Class: <http://purl.org/nact#Pine_nut>
+
+    SubClassOf: 
+        <http://purl.org/nact#Nut>
+    
+    
+Class: <http://purl.org/nact#Pineapple>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fruit>
+    
+    
+Class: <http://purl.org/nact#Pistachio>
+
+    SubClassOf: 
+        <http://purl.org/nact#Tree_nut>
+    
+    
+Class: <http://purl.org/nact#Pita>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Pita_bread",
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Pitta",
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Pitta_bread"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Bread>
+    
+    
+Class: <http://purl.org/nact#Pizza>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Flour>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Carbohydrate>
+    
+    
+Class: <http://purl.org/nact#Plaice>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fish>
+    
+    
+Class: <http://purl.org/nact#Plank>
+
+    SubClassOf: 
+        <http://purl.org/nact#Strength_training>,
+        <http://purl.org/nact#Workout>
+    
+    
+Class: <http://purl.org/nact#Plum>
+
+    SubClassOf: 
+        <http://purl.org/nact#Drupes>
+    
+    
+Class: <http://purl.org/nact#Pollen>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bee_product>
+    
+    
+Class: <http://purl.org/nact#Pollen_allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Polyunsaturated_fat>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fat>
+    
+    
+Class: <http://purl.org/nact#Pome>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fruit>
+    
+    
+Class: <http://purl.org/nact#Pomegranate>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fruit>
+    
+    
+Class: <http://purl.org/nact#Poppy_seed>
+
+    SubClassOf: 
+        <http://purl.org/nact#Seed>
+    
+    
+Class: <http://purl.org/nact#Pork>
+
+    SubClassOf: 
+        <http://purl.org/nact#Red_meat>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fat>
+    
+    
+Class: <http://purl.org/nact#Potassium>
+
+    SubClassOf: 
+        <http://purl.org/nact#Electrolyte>,
+        <http://purl.org/nact#Macromineral>
+    
+    
+Class: <http://purl.org/nact#Potassium_deficiency>
+
+    SubClassOf: 
+        <http://purl.org/nact#Deficiency>
+    
+    
+Class: <http://purl.org/nact#Potato>
+
+    SubClassOf: 
+        <http://purl.org/nact#Nightshades>,
+        <http://purl.org/nact#Root_vegetable>,
+        <http://purl.org/nact#Starchy_vegetable>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Salicylic_Acid>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B1>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B6>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Carbohydrate>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fiber>
+    
+    
+Class: <http://purl.org/nact#Poultry>
+
+    SubClassOf: 
+        <http://purl.org/nact#White_meat>
+    
+    
+Class: <http://purl.org/nact#Power_training>
+
+    SubClassOf: 
+        <http://purl.org/nact#Exercise>
+    
+    
+Class: <http://purl.org/nact#Prawn>
+
+    SubClassOf: 
+        <http://purl.org/nact#Crustacean_shellfish>
+    
+    
+Class: <http://purl.org/nact#Pregnancy>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Condition>
+    
+    
+Class: <http://purl.org/nact#Previous_MI>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Previous_myocardial_infarction"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#CVD>
+    
+    
+Class: <http://purl.org/nact#Previous_Stroke>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Condition>
+    
+    
+Class: <http://purl.org/nact#Property>
+
+    
+Class: <http://purl.org/nact#Prosciutto>
+
+    SubClassOf: 
+        <http://purl.org/nact#Ham>
+    
+    
+Class: <http://purl.org/nact#Protein>
+
+    SubClassOf: 
+        <http://purl.org/nact#Macronutrient>
+    
+    
+Class: <http://purl.org/nact#Pseudocereal>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>,
+        <http://purl.org/nact#freeOf> only <http://purl.org/nact#Gluten>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fiber>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Mineral>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Protein>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Starch>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Vitamin>
+    
+    
+Class: <http://purl.org/nact#Psysiological_indicator>
+
+    SubClassOf: 
+        <http://purl.org/nact#Body_measurement>
+    
+    
+Class: <http://purl.org/nact#Pudding>
+
+    SubClassOf: 
+        <http://purl.org/nact#Confectionery>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Butter>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Corn_starch>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Egg>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Milk>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Sugar>
+    
+    
+Class: <http://purl.org/nact#Pull-up>
+
+    SubClassOf: 
+        <http://purl.org/nact#Resistance_training>,
+        <http://purl.org/nact#Workout>
+    
+    
+Class: <http://purl.org/nact#Pumpkin>
+
+    SubClassOf: 
+        <http://purl.org/nact#Starchy_vegetable>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Pumpkin_seed>
+
+    SubClassOf: 
+        <http://purl.org/nact#Seed>
+    
+    
+Class: <http://purl.org/nact#Push-up>
+
+    SubClassOf: 
+        <http://purl.org/nact#Resistance_training>,
+        <http://purl.org/nact#Strength_training>,
+        <http://purl.org/nact#Workout>
+    
+    
+Class: <http://purl.org/nact#Quail>
+
+    SubClassOf: 
+        <http://purl.org/nact#Poultry>
+    
+    
+Class: <http://purl.org/nact#Quark_cheese>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cheese>
+    
+    
+Class: <http://purl.org/nact#Quince>
+
+    SubClassOf: 
+        <http://purl.org/nact#Pome>
+    
+    
+Class: <http://purl.org/nact#Quinoa>
+
+    SubClassOf: 
+        <http://purl.org/nact#Pseudocereal>
+    
+    
+Class: <http://purl.org/nact#Rabbit>
+
+    SubClassOf: 
+        <http://purl.org/nact#White_meat>
+    
+    
+Class: <http://purl.org/nact#Radish>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cruciferous>,
+        <http://purl.org/nact#Root_vegetable>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Raisin>
+
+    SubClassOf: 
+        <http://purl.org/nact#Dried_fruit>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Calcium>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Fiber>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Iron>,
+        <http://purl.org/nact#hasProperty> only <http://purl.org/nact#Antimicrobial>,
+        <http://purl.org/nact#hasProperty> only <http://purl.org/nact#Antioxidant>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Sugar>
+    
+    
+Class: <http://purl.org/nact#Rapeseed_oil>
+
+    EquivalentTo: 
+        <http://purl.org/nact#Canola_oil>
+    
+    SubClassOf: 
+        <http://purl.org/nact#Vegetable_oil>
+    
+    
+Class: <http://purl.org/nact#Rasberry>
+
+    SubClassOf: 
+        <http://purl.org/nact#Berry>
+    
+    
+Class: <http://purl.org/nact#Ratatouille>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Vegetable>
+    
+    
+Class: <http://purl.org/nact#Raw>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cooking-preparation_style>
+    
+    DisjointWith: 
+        <http://purl.org/nact#Cooked>
+    
+    
+Class: <http://purl.org/nact#Red_currant>
+
+    SubClassOf: 
+        <http://purl.org/nact#Berry>
+    
+    
+Class: <http://purl.org/nact#Red_meat>
+
+    SubClassOf: 
+        <http://purl.org/nact#Meat>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Iron>
+    
+    
+Class: <http://purl.org/nact#Red_meat_avoider>
+
+    SubClassOf: 
+        <http://purl.org/nact#Diet>
+    
+    
+Class: <http://purl.org/nact#Red_pepper>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bell_pepper>
+    
+    
+Class: <http://purl.org/nact#Reduce_TDEE>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Reduce_body_fat>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Reduce_carbs>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    DisjointWith: 
+        <http://purl.org/nact#Increase_carbs>
+    
+    
+Class: <http://purl.org/nact#Reduce_fat_intake>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Reduce_fiber>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Reduce_protein>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Reduce_salt_intake>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Reduce_sugar>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal>
+    
+    
+Class: <http://purl.org/nact#Resistance_training>
+
+    SubClassOf: 
+        <http://purl.org/nact#Exercise>
+    
+    
+Class: <http://purl.org/nact#Resting_heart_rate>
+
+    SubClassOf: 
+        <http://purl.org/nact#Heart_rate>
+    
+    
+Class: <http://purl.org/nact#Rice>
+
+    SubClassOf: 
+        <http://purl.org/nact#Grains>
+    
+    
+Class: <http://purl.org/nact#Rice_cake>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Rice>
+    
+    
+Class: <http://purl.org/nact#Rice_flakes>
+
+    SubClassOf: 
+        <http://purl.org/nact#Gluten-free_products>
+    
+    
+Class: <http://purl.org/nact#Rice_milk>
+
+    SubClassOf: 
+        <http://purl.org/nact#Lactose-free_dairy>
+    
+    
+Class: <http://purl.org/nact#Rice_noodles>
+
+    SubClassOf: 
+        <http://purl.org/nact#Noodles>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Rice>
+    
+    
+Class: <http://purl.org/nact#Ricotta>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cheese>
+    
+    
+Class: <http://purl.org/nact#Roasted>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cooked>
+    
+    
+Class: <http://purl.org/nact#Rocket>
+
+    EquivalentTo: 
+        <http://purl.org/nact#Arugula>
+    
+    SubClassOf: 
+        <http://purl.org/nact#Dark_leafy_greens>
+    
+    
+Class: <http://purl.org/nact#Roe>
+
+    SubClassOf: 
+        <http://purl.org/nact#Seafood>
+    
+    
+Class: <http://purl.org/nact#Root_vegetable>
+
+    SubClassOf: 
+        <http://purl.org/nact#Vegetable>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#B>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#B9>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#C>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Beta_carotene>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Magnesium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Potassium>
+    
+    
+Class: <http://purl.org/nact#Rosemary>
+
+    SubClassOf: 
+        <http://purl.org/nact#Herb>
+    
+    
+Class: <http://purl.org/nact#Royal_jelly>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bee_product>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#B>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Carbohydrate>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fat>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Protein>
+    
+    
+Class: <http://purl.org/nact#Running>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cardio>
+    
+    
+Class: <http://purl.org/nact#Rye>
+
+    SubClassOf: 
+        <http://purl.org/nact#Grains>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Gluten>
+    
+    
+Class: <http://purl.org/nact#Salad>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Green_salad"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Vegetable>
+    
+    
+Class: <http://purl.org/nact#SalicylateFoods>
+
+    SubClassOf: 
+        <http://purl.org/nact#GCIs>
+    
+    
+Class: <http://purl.org/nact#Salicylates_intolerance>
+
+    SubClassOf: 
+        <http://purl.org/nact#Intolerance>
+    
+    
+Class: <http://purl.org/nact#Salicylic_Acid>
+
+    SubClassOf: 
+        <http://purl.org/nact#Nutrient>
+    
+    
+Class: <http://purl.org/nact#Salmon>
+
+    Annotations: 
+        rdfs:comment "higher levels of mercury contamination"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Fish>,
+        <http://purl.org/nact#Oily_fish>,
+        <http://purl.org/nact#Superfood>
+    
+    
+Class: <http://purl.org/nact#Salt-free>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "No_salt",
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Sodium_free",
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Unsalted",
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Without_salt"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food_attribute>
+    
+    
+Class: <http://purl.org/nact#Salt>
+
+    Annotations: 
+        rdfs:comment "Salt placed in food (substance), as it consists of a compound of different minerals (typically sodium+chloride, although other minerals may be present in smaller traces, e.g. see @Sea_salt)."@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Spice>
+    
+    
+Class: <http://purl.org/nact#Samphire>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Κρίταμο"@el
+    
+    SubClassOf: 
+        <http://purl.org/nact#Seaweed>
+    
+    
+Class: <http://purl.org/nact#Sardine>
+
+    SubClassOf: 
+        <http://purl.org/nact#Oily_fish>,
+        <http://purl.org/nact#Small_Fish>
+    
+    
+Class: <http://purl.org/nact#Saturated_fat>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fat>
+    
+    
+Class: <http://purl.org/nact#Sauce>
+
+    SubClassOf: 
+        <http://purl.org/nact#Condiment>
+    
+    
+Class: <http://purl.org/nact#Sausage>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Meat>
+    
+    
+Class: <http://purl.org/nact#Scallion>
+
+    EquivalentTo: 
+        <http://purl.org/nact#Spring_onion>
+    
+    SubClassOf: 
+        <http://purl.org/nact#Allium>
+    
+    
+Class: <http://purl.org/nact#Scallop>
+
+    SubClassOf: 
+        <http://purl.org/nact#Mollusc>,
+        <http://purl.org/nact#Seafood>
+    
+    
+Class: <http://purl.org/nact#Scarola>
+
+    EquivalentTo: 
+        <http://purl.org/nact#Escarole>
+    
+    SubClassOf: 
+        <http://purl.org/nact#Dark_leafy_greens>
+    
+    
+Class: <http://purl.org/nact#Sea_bass>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fish>
+    
+    
+Class: <http://purl.org/nact#Sea_salt>
+
+    Annotations: 
+        rdfs:comment "To see if to add: 
+\"retains trace levels of minerals like magnesium, potassium, calcium and other nutrients\"."@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Salt>
+    
+    
+Class: <http://purl.org/nact#Seafood>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#A>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#B>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#D>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B12>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Calcium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Iodine>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Iron>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Magnesium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Omega_3>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Phosphorus>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Potassium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Protein>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Selenium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Zinc>
+    
+    
+Class: <http://purl.org/nact#Seaweed>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>,
+        <http://purl.org/nact#Superfood>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Carbohydrate>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Iron>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Mineral>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Protein>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#A>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#C>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#E>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fiber>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Iodine>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Polyunsaturated_fat>
+    
+    
+Class: <http://purl.org/nact#Sedentary>
+
+    SubClassOf: 
+        <http://purl.org/nact#Activity_level>
+    
+    
+Class: <http://purl.org/nact#Seed>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>,
+        <http://purl.org/nact#Superfood>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Mineral>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Monounsaturated_fat>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Polyunsaturated_fat>,
+        <http://purl.org/nact#hasProperty> only <http://purl.org/nact#Antioxidant>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#E>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fiber>
+    
+    
+Class: <http://purl.org/nact#Seitan>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Wheat>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Gluten>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Protein>
+    
+    
+Class: <http://purl.org/nact#Selenium>
+
+    SubClassOf: 
+        <http://purl.org/nact#Micromineral>,
+        <http://purl.org/nact#hasProperty> only <http://purl.org/nact#Antioxidant>
+    
+    
+Class: <http://purl.org/nact#Semi-skimmed_milk>
+
+    SubClassOf: 
+        <http://purl.org/nact#Milk>
+    
+    
+Class: <http://purl.org/nact#Semolina>
+
+    SubClassOf: 
+        <http://purl.org/nact#Wheat>
+    
+    
+Class: <http://purl.org/nact#Sesame>
+
+    SubClassOf: 
+        <http://purl.org/nact#Pseudocereal>
+    
+    
+Class: <http://purl.org/nact#Sesame_allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Shallot>
+
+    SubClassOf: 
+        <http://purl.org/nact#Allium>
+    
+    
+Class: <http://purl.org/nact#Sheep>
+
+    SubClassOf: 
+        <http://purl.org/nact#Red_meat>
+    
+    
+Class: <http://purl.org/nact#Shellfish>
+
+    SubClassOf: 
+        <http://purl.org/nact#Seafood>
+    
+    
+Class: <http://purl.org/nact#Shrimp>
+
+    SubClassOf: 
+        <http://purl.org/nact#Crustacean_shellfish>
+    
+    
+Class: <http://purl.org/nact#Side_bend>
+
+    SubClassOf: 
+        <http://purl.org/nact#Workout>
+    
+    
+Class: <http://purl.org/nact#Side_dish>
+
+    SubClassOf: 
+        <http://purl.org/nact#Meal>
+    
+    
+Class: <http://purl.org/nact#Skimmed_milk>
+
+    SubClassOf: 
+        <http://purl.org/nact#Milk>
+    
+    
+Class: <http://purl.org/nact#Sleep>
+
+    SubClassOf: 
+        <http://purl.org/nact#Activity>
+    
+    
+Class: <http://purl.org/nact#Small_Fish>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fish>
+    
+    
+Class: <http://purl.org/nact#Smoothie>
+
+    SubClassOf: 
+        <http://purl.org/nact#Confectionery>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Fruit>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Vegetable>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fluid>
+    
+    
+Class: <http://purl.org/nact#Snack>
+
+    SubClassOf: 
+        <http://purl.org/nact#Meal>
+    
+    
+Class: <http://purl.org/nact#Snail>
+
+    SubClassOf: 
+        <http://purl.org/nact#Mollusc>
+    
+    
+Class: <http://purl.org/nact#Snapper>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fish>
+    
+    
+Class: <http://purl.org/nact#Soda>
+
+    SubClassOf: 
+        <http://purl.org/nact#Drink>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Sugar>
+    
+    
+Class: <http://purl.org/nact#Sodium>
+
+    SubClassOf: 
+        <http://purl.org/nact#Electrolyte>,
+        <http://purl.org/nact#Macromineral>
+    
+    
+Class: <http://purl.org/nact#Sodium_deficiency>
+
+    SubClassOf: 
+        <http://purl.org/nact#Deficiency>
+    
+    
+Class: <http://purl.org/nact#Sorbet>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Sugar>
+    
+    
+Class: <http://purl.org/nact#Soup>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fluid>
+    
+    
+Class: <http://purl.org/nact#Sour_cream>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cream>
+    
+    
+Class: <http://purl.org/nact#Soy>
+
+    Annotations: 
+        rdfs:comment "TODO: 
+1. detangle with Soyabean - maintain only one, synonyms on annotations. Do not lose axioms.
+2. Add soy sauce (common condiment), detangle from others and apply respective connections."@en,
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Soya"@en
+    
+    EquivalentTo: 
+        <http://purl.org/nact#Soya_bean>
+    
+    SubClassOf: 
+        <http://purl.org/nact#Legume>
+    
+    
+Class: <http://purl.org/nact#Soy_allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Soy_yoghurt>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Soy_yogurt",
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Soya_yoghurt",
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Soya_yogurt"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Lactose-free_dairy>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Soy>
+    
+    
+Class: <http://purl.org/nact#Soya_bean>
+
+    Annotations: 
+        rdfs:comment "TODO: detangle with Soybean - maintain only one, synonyms on annotations. Do not lose axioms."@en,
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Soy_bean",
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Soyabean",
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Soybean"
+    
+    EquivalentTo: 
+        <http://purl.org/nact#Edamame>,
+        <http://purl.org/nact#Soy>,
+        <http://purl.org/nact#Soybean>
+    
+    SubClassOf: 
+        <http://purl.org/nact#Bean>
+    
+    
+Class: <http://purl.org/nact#Soya_milk>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Soy_milk"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Lactose-free_dairy>
+    
+    
+Class: <http://purl.org/nact#Soybean>
+
+    Annotations: 
+        rdfs:comment "TODO: detangle with Soya_bean - maintain only one, synonyms on annotations. Do not lose axioms."@en
+    
+    EquivalentTo: 
+        <http://purl.org/nact#Soya_bean>
+    
+    SubClassOf: 
+        <http://purl.org/nact#Bean>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fiber>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Iron>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Magnesium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Potassium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Protein>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Zinc>
+    
+    
+Class: <http://purl.org/nact#Soybean_oil>
+
+    SubClassOf: 
+        <http://purl.org/nact#Vegetable_oil>
+    
+    
+Class: <http://purl.org/nact#Spaghetti>
+
+    SubClassOf: 
+        <http://purl.org/nact#Pasta>
+    
+    
+Class: <http://purl.org/nact#Spice>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>
+    
+    
+Class: <http://purl.org/nact#Spinach>
+
+    SubClassOf: 
+        <http://purl.org/nact#Dark_leafy_greens>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Manganese>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B9>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Iron>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#K>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Spinning>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cycling>
+    
+    
+Class: <http://purl.org/nact#Spirulina>
+
+    SubClassOf: 
+        <http://purl.org/nact#Seaweed>
+    
+    
+Class: <http://purl.org/nact#Sports_level>
+
+    SubClassOf: 
+        <http://purl.org/nact#Activity_level>
+    
+    
+Class: <http://purl.org/nact#Spring_onion>
+
+    EquivalentTo: 
+        <http://purl.org/nact#Scallion>
+    
+    SubClassOf: 
+        <http://purl.org/nact#Allium>
+    
+    
+Class: <http://purl.org/nact#Squash>
+
+    SubClassOf: 
+        <http://purl.org/nact#Vegetable>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Squat>
+
+    SubClassOf: 
+        <http://purl.org/nact#Resistance_training>,
+        <http://purl.org/nact#Strength_training>,
+        <http://purl.org/nact#Workout>
+    
+    
+Class: <http://purl.org/nact#Squid>
+
+    SubClassOf: 
+        <http://purl.org/nact#Mollusc>,
+        <http://purl.org/nact#Seafood>
+    
+    
+Class: <http://purl.org/nact#Starch>
+
+    SubClassOf: 
+        <http://purl.org/nact#Carbohydrate>
+    
+    
+Class: <http://purl.org/nact#Starch_noodles>
+
+    SubClassOf: 
+        <http://purl.org/nact#Noodles>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Vegetable_starch>
+    
+    
+Class: <http://purl.org/nact#Starchy_vegetable>
+
+    SubClassOf: 
+        <http://purl.org/nact#Vegetable>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Starch>
+    
+    
+Class: <http://purl.org/nact#Stationary_cycling>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cycling>,
+        <http://purl.org/nact#Low-impact_exercise>
+    
+    
+Class: <http://purl.org/nact#Steamed>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cooked>
+    
+    
+Class: <http://purl.org/nact#Stir-fry>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fried>
+    
+    
+Class: <http://purl.org/nact#Strawberry>
+
+    SubClassOf: 
+        <http://purl.org/nact#Berry>
+    
+    
+Class: <http://purl.org/nact#Strawberry_allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Strength>
+
+    SubClassOf: 
+        <http://purl.org/nact#Activity_type>
+    
+    
+Class: <http://purl.org/nact#Strength_training>
+
+    SubClassOf: 
+        <http://purl.org/nact#Exercise>
+    
+    
+Class: <http://purl.org/nact#Stretch>
+
+    SubClassOf: 
+        <http://purl.org/nact#Workout>
+    
+    
+Class: <http://purl.org/nact#Sucrose>
+
+    SubClassOf: 
+        <http://purl.org/nact#Carbohydrate>
+    
+    
+Class: <http://purl.org/nact#Sugar-free>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "No_sugar"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food_attribute>
+    
+    
+Class: <http://purl.org/nact#Sugar>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Sucrose>
+    
+    
+Class: <http://purl.org/nact#Sulfite_intolerance>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Intolerance>
+    
+    
+Class: <http://purl.org/nact#Sulfur>
+
+    SubClassOf: 
+        <http://purl.org/nact#Macromineral>
+    
+    
+Class: <http://purl.org/nact#Sulphite_allergy>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Sulphur_dioxide_allergy>
+
+    Annotations: 
+        rdfs:comment "Legacy only, maintained for functional purposes only. 
+No axioms are expected to be included in this version."
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Summer_squash>
+
+    EquivalentTo: 
+        <http://purl.org/nact#Courgette>
+    
+    SubClassOf: 
+        <http://purl.org/nact#Squash>
+    
+    
+Class: <http://purl.org/nact#Sunflower_oil>
+
+    SubClassOf: 
+        <http://purl.org/nact#Vegetable_oil>
+    
+    
+Class: <http://purl.org/nact#Sunflower_seed>
+
+    Annotations: 
+        rdfs:comment "TODO: chrosscheck resources:
+
+a good source of fiber, protein, iron, vitamin E and several of the B vitamins, rich source of the healthy mono- and polyunsaturated fats - however, they're also a source of saturated fatty acids"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Seed>
+    
+    
+Class: <http://purl.org/nact#Superfood>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>
+    
+    
+Class: <http://purl.org/nact#Supplement>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>
+    
+    
+Class: <http://purl.org/nact#Sweet_potato>
+
+    SubClassOf: 
+        <http://purl.org/nact#Root_vegetable>,
+        <http://purl.org/nact#Starchy_vegetable>,
+        <http://purl.org/nact#Superfood>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Swimming>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cardio>,
+        <http://purl.org/nact#Low-impact_exercise>
+    
+    
+Class: <http://purl.org/nact#Swiss_chard>
+
+    SubClassOf: 
+        <http://purl.org/nact#Dark_leafy_greens>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Iron>
+    
+    
+Class: <http://purl.org/nact#Swordfish>
+
+    Annotations: 
+        rdfs:comment "higher levels of mercury contamination"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Fish>
+    
+    
+Class: <http://purl.org/nact#Systolic_blood_pressure>
+
+    SubClassOf: 
+        <http://purl.org/nact#Blood_pressure>
+    
+    
+Class: <http://purl.org/nact#T2_Diabetes>
+
+    SubClassOf: 
+        <http://purl.org/nact#Condition>,
+        <http://purl.org/nact#goalActivity> only <http://purl.org/nact#Aerobic>,
+        <http://purl.org/nact#goalActivity> only <http://purl.org/nact#Endurance_training>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Increase_fiber>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Reduce_carbs>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Reduce_sugar>
+    
+    
+Class: <http://purl.org/nact#TDEE>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Total_Daily_Energy_Expenditure"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Goal_measurement>
+    
+    
+Class: <http://purl.org/nact#Table_salt>
+
+    Annotations: 
+        rdfs:comment "Table salt is mined from salt deposits and then processed to give it a fine texture so it’s easier to mix and use in recipes. This processing strips table salt of any minerals, and additives may be used to prevent clumping."@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Salt>
+    
+    
+Class: <http://purl.org/nact#Tahini>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Sesame_butter"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Sesame>
+    
+    
+Class: <http://purl.org/nact#Tangerine>
+
+    SubClassOf: 
+        <http://purl.org/nact#Citrus>
+    
+    
+Class: <http://purl.org/nact#Tea>
+
+    SubClassOf: 
+        <http://purl.org/nact#Drink>
+    
+    
+Class: <http://purl.org/nact#Tempeh>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Soy>
+    
+    
+Class: <http://purl.org/nact#Thyme>
+
+    SubClassOf: 
+        <http://purl.org/nact#Herb>
+    
+    
+Class: <http://purl.org/nact#Toasted>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cooked>
+    
+    
+Class: <http://purl.org/nact#Tofu>
+
+    SubClassOf: 
+        <http://purl.org/nact#Compound_food>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Soy>
+    
+    
+Class: <http://purl.org/nact#Tomato>
+
+    SubClassOf: 
+        <http://purl.org/nact#Nightshades>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#B7>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Iron>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Lycopene>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Salicylic_Acid>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Zinc>
+    
+    
+Class: <http://purl.org/nact#Tongue>
+
+    SubClassOf: 
+        <http://purl.org/nact#Offal>
+    
+    
+Class: <http://purl.org/nact#Tortilla>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bread>
+    
+    
+Class: <http://purl.org/nact#Tree_nut>
+
+    SubClassOf: 
+        <http://purl.org/nact#Nut>
+    
+    
+Class: <http://purl.org/nact#Tree_nut_allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Triglycerides>
+
+    SubClassOf: 
+        <http://purl.org/nact#Biochemical_indicator>
+    
+    
+Class: <http://purl.org/nact#Tripe>
+
+    SubClassOf: 
+        <http://purl.org/nact#Offal>
+    
+    
+Class: <http://purl.org/nact#Trout>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fish>,
+        <http://purl.org/nact#Oily_fish>
+    
+    
+Class: <http://purl.org/nact#Tuna>
+
+    Annotations: 
+        rdfs:comment "higher levels of mercury contamination"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Fish>,
+        <http://purl.org/nact#Oily_fish>
+    
+    
+Class: <http://purl.org/nact#Turkey>
+
+    SubClassOf: 
+        <http://purl.org/nact#Poultry>
+    
+    
+Class: <http://purl.org/nact#Turkey_ham>
+
+    SubClassOf: 
+        <http://purl.org/nact#Turkey>
+    
+    
+Class: <http://purl.org/nact#Turmeric>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Curcumin"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Spice>,
+        <http://purl.org/nact#Superfood>,
+        <http://purl.org/nact#hasProperty> only <http://purl.org/nact#Anti-inflammatory>
+    
+    
+Class: <http://purl.org/nact#Turnip>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cruciferous>,
+        <http://purl.org/nact#Root_vegetable>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Twist>
+
+    SubClassOf: 
+        <http://purl.org/nact#Workout>
+    
+    
+Class: <http://purl.org/nact#Underweight>
+
+    SubClassOf: 
+        <http://purl.org/nact#Condition>
+    
+    
+Class: <http://purl.org/nact#Uni>
+
+    Annotations: 
+        rdfs:comment "Sea urchin"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Seafood>
+    
+    
+Class: <http://purl.org/nact#Veal>
+
+    SubClassOf: 
+        <http://purl.org/nact#Red_meat>
+    
+    
+Class: <http://purl.org/nact#Vegan>
+
+    SubClassOf: 
+        <http://purl.org/nact#Diet>
+    
+    
+Class: <http://purl.org/nact#Vegetable>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Fiber>
+    
+    
+Class: <http://purl.org/nact#Vegetable_oil>
+
+    SubClassOf: 
+        <http://purl.org/nact#Oil>
+    
+    
+Class: <http://purl.org/nact#Vegetable_starch>
+
+    SubClassOf: 
+        <http://purl.org/nact#Culinary_starches>
+    
+    
+Class: <http://purl.org/nact#Vegetarian>
+
+    SubClassOf: 
+        <http://purl.org/nact#Diet>
+    
+    
+Class: <http://purl.org/nact#Venison>
+
+    SubClassOf: 
+        <http://purl.org/nact#Red_meat>
+    
+    
+Class: <http://purl.org/nact#Very_high>
+
+    SubClassOf: 
+        <http://purl.org/nact#Level>
+    
+    
+Class: <http://purl.org/nact#Very_low>
+
+    SubClassOf: 
+        <http://purl.org/nact#Level>
+    
+    
+Class: <http://purl.org/nact#Vigorous_intensity>
+
+    SubClassOf: 
+        <http://purl.org/nact#Intensity>
+    
+    
+Class: <http://purl.org/nact#Vinegar>
+
+    SubClassOf: 
+        <http://purl.org/nact#Condiment>
+    
+    
+Class: <http://purl.org/nact#Visceral_fat>
+
+    SubClassOf: 
+        <http://purl.org/nact#Body_fat>
+    
+    
+Class: <http://purl.org/nact#Vitamin>
+
+    SubClassOf: 
+        <http://purl.org/nact#Micronutrient>
+    
+    
+Class: <http://purl.org/nact#Vitamin_A_deficiency>
+
+    SubClassOf: 
+        <http://purl.org/nact#Deficiency>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Increase_vitamin_A_intake>
+    
+    
+Class: <http://purl.org/nact#Vitamin_B12_deficiency>
+
+    SubClassOf: 
+        <http://purl.org/nact#Deficiency>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Increase_vitamin_B12_intake>
+    
+    
+Class: <http://purl.org/nact#Vitamin_C_deficiency>
+
+    SubClassOf: 
+        <http://purl.org/nact#Deficiency>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Increase_vitamin_C_intake>
+    
+    
+Class: <http://purl.org/nact#Vitamin_D_deficiency>
+
+    SubClassOf: 
+        <http://purl.org/nact#Deficiency>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Increase_vitamin_D_intake>
+    
+    
+Class: <http://purl.org/nact#Volume>
+
+    SubClassOf: 
+        <http://purl.org/nact#Activity_type>
+    
+    
+Class: <http://purl.org/nact#Walking>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cardio>,
+        <http://purl.org/nact#Low-impact_exercise>
+    
+    
+Class: <http://purl.org/nact#Walnut>
+
+    SubClassOf: 
+        <http://purl.org/nact#Tree_nut>
+    
+    
+Class: <http://purl.org/nact#Water>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fluid>
+    
+    
+Class: <http://purl.org/nact#Water_deficiency>
+
+    Annotations: 
+        rdfs:comment "skos:altLabel Dehydration may be revised in future releases"@en,
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Dehydration"@en
+    
+    SubClassOf: 
+        <http://purl.org/nact#Deficiency>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Increase_liquids>
+    
+    
+Class: <http://purl.org/nact#Water_level>
+
+    SubClassOf: 
+        <http://purl.org/nact#Anthropometrical_indicator>
+    
+    
+Class: <http://purl.org/nact#Watercress>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cruciferous>,
+        <http://purl.org/nact#Dark_leafy_greens>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Salicylic_Acid>
+    
+    
+Class: <http://purl.org/nact#Watermelon>
+
+    SubClassOf: 
+        <http://purl.org/nact#Fruit>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#A>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#B5>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Copper>,
+        <http://purl.org/nact#containsNutrient> only <http://purl.org/nact#Potassium>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#C>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Lycopene>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Water>
+    
+    
+Class: <http://purl.org/nact#Weight>
+
+    SubClassOf: 
+        <http://purl.org/nact#Anthropometrical_indicator>
+    
+    
+Class: <http://purl.org/nact#Weight_gain>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Increase_carbs>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Increase_protein>
+    
+    DisjointWith: 
+        <http://purl.org/nact#Weight_loss>
+    
+    
+Class: <http://purl.org/nact#Weight_lifting>
+
+    SubClassOf: 
+        <http://purl.org/nact#Strength_training>
+    
+    
+Class: <http://purl.org/nact#Weight_loss>
+
+    SubClassOf: 
+        <http://purl.org/nact#Goal>,
+        <http://purl.org/nact#goalActivity> only <http://purl.org/nact#Aerobic>,
+        <http://purl.org/nact#goalActivity> only <http://purl.org/nact#Cardio>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Reduce_carbs>,
+        <http://purl.org/nact#hasGoal> only <http://purl.org/nact#Reduce_fat_intake>
+    
+    DisjointWith: 
+        <http://purl.org/nact#Weight_gain>, <http://purl.org/nact#goalNutrient> some <http://purl.org/nact#Fat>
+    
+    
+Class: <http://purl.org/nact#Wheat>
+
+    SubClassOf: 
+        <http://purl.org/nact#Grains>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Gluten>
+    
+    
+Class: <http://purl.org/nact#Wheat_allergy>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food_allergy>
+    
+    
+Class: <http://purl.org/nact#Wheat_flour>
+
+    SubClassOf: 
+        <http://purl.org/nact#Flour>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Wheat>
+    
+    
+Class: <http://purl.org/nact#Wheat_noodles>
+
+    SubClassOf: 
+        <http://purl.org/nact#Noodles>,
+        <http://purl.org/nact#containsFood> only <http://purl.org/nact#Wheat>
+    
+    
+Class: <http://purl.org/nact#Whey_cheese>
+
+    SubClassOf: 
+        <http://purl.org/nact#Cheese>
+    
+    
+Class: <http://purl.org/nact#White_bean>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bean>
+    
+    
+Class: <http://purl.org/nact#White_chocolate>
+
+    SubClassOf: 
+        <http://purl.org/nact#Chocolate>
+    
+    
+Class: <http://purl.org/nact#White_meat>
+
+    SubClassOf: 
+        <http://purl.org/nact#Meat>
+    
+    
+Class: <http://purl.org/nact#White_rice>
+
+    SubClassOf: 
+        <http://purl.org/nact#Rice>
+    
+    
+Class: <http://purl.org/nact#White_rice_flour>
+
+    SubClassOf: 
+        <http://purl.org/nact#Flour>
+    
+    
+Class: <http://purl.org/nact#White_tea>
+
+    SubClassOf: 
+        <http://purl.org/nact#Tea>
+    
+    
+Class: <http://purl.org/nact#Whole_grain>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Wholegrain"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food_attribute>
+    
+    
+Class: <http://purl.org/nact#Whole_meal>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Wholemeal"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food_attribute>
+    
+    
+Class: <http://purl.org/nact#Whole_milk>
+
+    SubClassOf: 
+        <http://purl.org/nact#Milk>
+    
+    
+Class: <http://purl.org/nact#Whole_weat_flour>
+
+    SubClassOf: 
+        <http://purl.org/nact#Flour>
+    
+    
+Class: <http://purl.org/nact#Whole_wheat>
+
+    Annotations: 
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Wholewheat"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Food_attribute>
+    
+    
+Class: <http://purl.org/nact#Wild_rice>
+
+    SubClassOf: 
+        <http://purl.org/nact#Rice>
+    
+    
+Class: <http://purl.org/nact#Winter_squash>
+
+    SubClassOf: 
+        <http://purl.org/nact#Squash>,
+        <http://purl.org/nact#Starchy_vegetable>
+    
+    
+Class: <http://purl.org/nact#Workout>
+
+    SubClassOf: 
+        <http://purl.org/nact#Exercise>
+    
+    
+Class: <http://purl.org/nact#Yeast>
+
+    SubClassOf: 
+        <http://purl.org/nact#Food>
+    
+    
+Class: <http://purl.org/nact#Yellow_pepper>
+
+    SubClassOf: 
+        <http://purl.org/nact#Bell_pepper>
+    
+    
+Class: <http://purl.org/nact#Yoga>
+
+    SubClassOf: 
+        <http://purl.org/nact#Balance_training>,
+        <http://purl.org/nact#Flexibility_training>,
+        <http://purl.org/nact#Strength_training>
+    
+    
+Class: <http://purl.org/nact#Yoghurt>
+
+    Annotations: 
+        rdfs:comment "Assumed plain, whole milk",
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Yogurt"
+    
+    SubClassOf: 
+        <http://purl.org/nact#Dairy>,
+        <http://purl.org/nact#highIn> only <http://purl.org/nact#Protein>
+    
+    
+Class: <http://purl.org/nact#Zeaxanthin>
+
+    SubClassOf: 
+        <http://purl.org/nact#Carotenoid>
+    
+    
+Class: <http://purl.org/nact#Zinc>
+
+    SubClassOf: 
+        <http://purl.org/nact#Micromineral>
+    
+    
+Class: <http://purl.org/nact#Zucchini>
+
+    EquivalentTo: 
+        <http://purl.org/nact#Courgette>
+    
+    SubClassOf: 
+        <http://purl.org/nact#Squash>
+    
+    
+Class: <http://purl.org/nact#Ηeart_disease>
+
+    SubClassOf: 
+        <http://purl.org/nact#CVD>
+    
+    
+Class: owl:Nothing
+
+    
